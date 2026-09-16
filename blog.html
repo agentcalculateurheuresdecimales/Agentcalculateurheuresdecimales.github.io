@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ce Que Coûte Vraiment une Erreur de Conversion d'Heures | Blog</title>
-<meta name="description" content="Pourquoi une petite erreur de conversion d'heures peut coûter cher sur un cumul de bulletins de paie.">
+<title>Blog | HoraDecimal.pro</title>
+<meta name="description" content="Le coût réel d'une erreur de conversion d'heures en paie, et comment l'éviter.">
 <link rel="canonical" href="https://axolscozytimer-cmyk.github.io/blog.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,12 +18,12 @@
   --line: #e2e5e9;
 }
 body { font-family: 'Space Grotesk', system-ui, sans-serif; background: var(--paper); color: var(--ink); line-height: 1.65; }
-.wrap { max-width: 760px; margin: 0 auto; padding: 0 20px; }
+.wrap { max-width: 780px; margin: 0 auto; padding: 0 20px; }
 header { background: #fff; border-bottom: 1px solid var(--line); padding: 16px 0; }
 .header-row { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
 .logo { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 1.05rem; text-decoration: none; color: var(--ink); }
 .logo-icon { width: 36px; height: 36px; border-radius: 10px; background: var(--accent); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; }
-nav.main-nav { display: flex; gap: 16px; flex-wrap: wrap; }
+nav.main-nav { display: flex; gap: 16px; flex-wrap: wrap; align-items:center; }
 nav.main-nav a { color: var(--ink-soft); text-decoration: none; font-size: 0.85rem; font-weight: 600; }
 nav.main-nav a:hover, nav.main-nav a.active { color: var(--accent); }
 main { padding: 40px 0 60px; }
@@ -36,49 +36,45 @@ p { color: var(--ink-soft); font-size: 0.96rem; margin-bottom: 12px; }
 .tool-card { background: var(--card); border: 1px solid var(--card-border); border-radius: 12px; padding: 20px; text-decoration: none; color: var(--ink); display: block; }
 .tool-card h2 { margin: 0 0 6px; font-size: 1.05rem; }
 .tool-card p { font-size: 0.85rem; margin: 0; }
-.soon { opacity: 0.5; }
 .ad-slot { background: #f3f4f6; border: 1px dashed #d1d5db; border-radius: 10px; text-align: center; padding: 14px; font-size: 0.7rem; color: var(--ink-mute); letter-spacing: 0.05em; text-transform: uppercase; margin: 26px 0; }
 .card { background: var(--card); border: 1px solid var(--card-border); border-radius: 12px; padding: 18px 20px; margin: 20px 0; }
 .card p { color: var(--ink); font-size: 0.92rem; margin-bottom: 0; }
 a.cta { display: inline-block; background: var(--accent); color: #fff; text-decoration: none; border-radius: 10px; padding: 12px 24px; font-weight: 700; font-size: 0.95rem; margin-top: 10px; }
 footer { background: #fff; border-top: 1px solid var(--line); padding: 28px 0; margin-top: 40px; font-size: 0.82rem; color: var(--ink-mute); text-align: center; }
-
-  .nav-dropdown { position: relative; }
-  .dropdown-trigger { display: flex; align-items: center; gap: 4px; cursor: pointer; }
-  .dropdown-panel { display: none; position: absolute; top: 100%; left: 0; background: #fff; border: 1px solid var(--line); border-radius: 10px; padding: 6px; min-width: 200px; box-shadow: 0 10px 28px rgba(0,0,0,0.10); z-index: 30; margin-top: 0; }
-  .nav-dropdown:hover .dropdown-panel, .dropdown-panel.open { display: block; }
-  .dropdown-panel a { display: flex; align-items: center; gap: 8px; padding: 8px 10px; color: var(--ink); text-decoration: none; font-size: 0.85rem; border-radius: 6px; font-weight: 500; }
-  .dropdown-panel a:hover { background: var(--card); }
-  .dropdown-soon { padding: 8px 10px; color: var(--ink-mute); font-size: 0.78rem; font-style: italic; }
+.nav-dropdown { position: relative; }
+.dropdown-trigger { display: flex; align-items: center; gap: 4px; cursor: pointer; }
+.dropdown-panel { display: none; position: absolute; top: 100%; left: 0; background: #fff; border: 1px solid var(--line); border-radius: 10px; padding: 6px; min-width: 200px; box-shadow: 0 10px 28px rgba(0,0,0,0.10); z-index: 30; margin-top: 0; }
+.nav-dropdown:hover .dropdown-panel, .dropdown-panel.open { display: block; }
+.dropdown-panel a { display: flex; align-items: center; gap: 8px; padding: 8px 10px; color: var(--ink); text-decoration: none; font-size: 0.85rem; border-radius: 6px; font-weight: 500; }
+.dropdown-panel a:hover { background: var(--card); }
+[dir="rtl"] main { text-align: right; }
+[dir="rtl"] .dropdown-panel { left: auto; right: 0; }
 </style>
 </head>
 <body>
 <header>
   <div class="wrap header-row">
     <a class="logo" href="/"><span class="logo-icon">H</span> HoraDecimal.pro</a>
-    <nav class="main-nav"><a href="/">Home</a><div class="nav-dropdown"><span class="dropdown-trigger" onclick="var p=this.nextElementSibling;p.classList.toggle('open')"><a href="/tools.html" style="color:inherit;text-decoration:none;">Free Tools</a> <span style="font-size:0.7em;">▾</span></span><div class="dropdown-panel"><a href="/">Convertisseur Heures</a><a href="/heures-supplementaires.html">Heures Supplémentaires</a><a href="/feuille-de-temps.html">Feuille de Temps</a></div></div><a href="/guides.html">Guides</a><a href="/blog.html" class="active">Blog</a><a href="/about.html">About</a></nav>
+    <nav class="main-nav"><a href="/" data-i18n="nav-home">Home</a><div class="nav-dropdown"><span class="dropdown-trigger" onclick="var p=this.nextElementSibling;p.classList.toggle('open')"><a href="/tools.html" style="color:inherit;text-decoration:none;" data-i18n="nav-tools">Outils Gratuits</a> <span style="font-size:0.7em;">&#9662;</span></span><div class="dropdown-panel"><a href="/" data-i18n="nav-tool1">Convertisseur Heures Décimales</a><a href="/heures-supplementaires.html" data-i18n="nav-tool2">Heures Supplémentaires</a><a href="/feuille-de-temps.html" data-i18n="nav-tool3">Feuille de Temps</a></div></div><a href="/guides.html" data-i18n="nav-guides">Guides</a><a href="/blog.html" data-i18n="nav-blog" class="active">Blog</a><a href="/about.html" data-i18n="nav-about">À propos</a><div class="nav-dropdown"><span class="dropdown-trigger" onclick="var p=this.nextElementSibling;p.classList.toggle('open')"><span id="lang-current">FR</span> <span style="font-size:0.7em;">&#9662;</span></span><div class="dropdown-panel lang-panel"><a href="#" data-lang="fr" onclick="setLanguage('fr');return false;">Français</a><a href="#" data-lang="en" onclick="setLanguage('en');return false;">English</a><a href="#" data-lang="es" onclick="setLanguage('es');return false;">Español</a><a href="#" data-lang="pt" onclick="setLanguage('pt');return false;">Português</a><a href="#" data-lang="hi" onclick="setLanguage('hi');return false;">हिन्दी</a><a href="#" data-lang="ar" onclick="setLanguage('ar');return false;">العربية</a></div></div></nav>
   </div>
 </header>
 <main class="wrap">
-  <span class="eyebrow">Blog</span>
-  <h1>Ce que coûte vraiment une erreur de conversion d'heures</h1>
-  <p>Une erreur de quelques centièmes sur une fiche de paie paraît négligeable. Multipliée par le nombre de salariés et de mois, elle ne l'est plus du tout.</p>
-
-  <h2>Un exemple concret</h2>
-  <p>Une erreur de 0,10 heure sur un taux horaire de 15€ représente 1,50€ par bulletin. Sur 50 salariés et 12 mois, cela fait 900€ d'écart cumulé sur l'année&nbsp;— avant même de compter le temps passé à corriger les régularisations.</p>
-
-  <h2>D'où viennent ces erreurs</h2>
-  <p>La majorité des erreurs viennent d'une confusion entre minutes et centièmes lors d'une saisie manuelle sur tableur, sans formule de conversion automatisée.</p>
-
-  <div class="ad-slot">Publicité / Advertisement — AdSense</div>
-
-  <h2>Comment les éviter</h2>
-  <p>Automatiser la conversion (via un outil dédié ou une formule de tableur fiable) élimine ce risque à la source, plutôt que de corriger après coup.</p>
-
-  <p><a class="cta" href="/">Convertir mes heures</a></p>
+<span class="eyebrow" data-i18n="eyebrow">Blog</span>
+<h1 data-i18n="h1">Ce que coûte vraiment une erreur de conversion d'heures</h1>
+<p data-i18n="intro">Une erreur de quelques centièmes sur une fiche de paie paraît négligeable. Multipliée par le nombre de salariés et de mois, elle ne l'est plus du tout.</p>
+<h2 data-i18n="h2-1">Un exemple concret</h2>
+<p data-i18n="p1">Une erreur de 0,10 heure sur un taux horaire de 15€ représente 1,50€ par bulletin. Sur 50 salariés et 12 mois, cela fait 900€ d'écart cumulé sur l'année — avant même de compter le temps passé à corriger les régularisations.</p>
+<h2 data-i18n="h2-2">D'où viennent ces erreurs</h2>
+<p data-i18n="p2">La majorité des erreurs viennent d'une confusion entre minutes et centièmes lors d'une saisie manuelle sur tableur, sans formule de conversion automatisée.</p>
+<div class="ad-slot">Publicité / Advertisement — AdSense</div>
+<h2 data-i18n="h2-3">Comment les éviter</h2>
+<p data-i18n="p3">Automatiser la conversion (via un outil dédié ou une formule de tableur fiable) élimine ce risque à la source, plutôt que de corriger après coup.</p>
+<p><a class="cta" href="/" data-i18n="cta">Convertir mes heures</a></p>
 </main>
 <footer>
-  <div class="wrap">© HoraDecimal.pro</div>
+  <div class="wrap">&copy; HoraDecimal.pro</div>
 </footer>
+<script>window.translations = {"fr": {"nav-home": "Home", "nav-tools": "Outils Gratuits", "nav-tool1": "Convertisseur Heures Décimales", "nav-tool2": "Heures Supplémentaires", "nav-tool3": "Feuille de Temps", "nav-guides": "Guides", "nav-blog": "Blog", "nav-about": "À propos", "eyebrow": "Blog", "h1": "Ce que coûte vraiment une erreur de conversion d'heures", "intro": "Une erreur de quelques centièmes sur une fiche de paie paraît négligeable. Multipliée par le nombre de salariés et de mois, elle ne l'est plus du tout.", "h2-1": "Un exemple concret", "p1": "Une erreur de 0,10 heure sur un taux horaire de 15€ représente 1,50€ par bulletin. Sur 50 salariés et 12 mois, cela fait 900€ d'écart cumulé sur l'année — avant même de compter le temps passé à corriger les régularisations.", "h2-2": "D'où viennent ces erreurs", "p2": "La majorité des erreurs viennent d'une confusion entre minutes et centièmes lors d'une saisie manuelle sur tableur, sans formule de conversion automatisée.", "h2-3": "Comment les éviter", "p3": "Automatiser la conversion (via un outil dédié ou une formule de tableur fiable) élimine ce risque à la source, plutôt que de corriger après coup.", "cta": "Convertir mes heures", "_title": "Blog | HoraDecimal.pro", "_desc": "Le coût réel d'une erreur de conversion d'heures en paie, et comment l'éviter."}, "en": {"nav-home": "Home", "nav-tools": "Free Tools", "nav-tool1": "Decimal Hours Converter", "nav-tool2": "Overtime Calculator", "nav-tool3": "Timesheet", "nav-guides": "Guides", "nav-blog": "Blog", "nav-about": "About", "eyebrow": "Blog", "h1": "What an Hours-Conversion Mistake Really Costs", "intro": "An error of a few hundredths on a payslip looks negligible. Multiplied across employees and months, it isn't.", "h2-1": "A concrete example", "p1": "A 0.10-hour error at a €15 hourly rate is €1.50 per payslip. Across 50 employees and 12 months, that's a €900 cumulative gap over the year — before even counting the time spent fixing corrections.", "h2-2": "Where these errors come from", "p2": "Most errors come from confusing minutes and hundredths during manual spreadsheet entry, with no automated conversion formula.", "h2-3": "How to avoid them", "p3": "Automating the conversion (via a dedicated tool or a reliable spreadsheet formula) eliminates this risk at the source, instead of fixing it after the fact.", "cta": "Convert my hours", "_title": "Blog | HoraDecimal.pro", "_desc": "The real cost of an hours-conversion mistake in payroll, and how to avoid it."}, "es": {"nav-home": "Inicio", "nav-tools": "Herramientas Gratis", "nav-tool1": "Convertidor de Horas Decimales", "nav-tool2": "Horas Extras", "nav-tool3": "Hoja de Horas", "nav-guides": "Guías", "nav-blog": "Blog", "nav-about": "Acerca de", "eyebrow": "Blog", "h1": "Lo que realmente cuesta un error de conversión de horas", "intro": "Un error de unas pocas centésimas en una nómina parece insignificante. Multiplicado por el número de empleados y meses, deja de serlo.", "h2-1": "Un ejemplo concreto", "p1": "Un error de 0,10 horas con una tarifa de 15€ representa 1,50€ por nómina. En 50 empleados y 12 meses, son 900€ de diferencia acumulada al año, sin contar el tiempo dedicado a corregir regularizaciones.", "h2-2": "De dónde vienen estos errores", "p2": "La mayoría de los errores provienen de confundir minutos y centésimas al introducir datos manualmente en una hoja de cálculo, sin fórmula de conversión automatizada.", "h2-3": "Cómo evitarlos", "p3": "Automatizar la conversión (mediante una herramienta dedicada o una fórmula de hoja de cálculo fiable) elimina este riesgo de raíz, en lugar de corregirlo después.", "cta": "Convertir mis horas", "_title": "Blog | HoraDecimal.pro", "_desc": "El coste real de un error de conversión de horas en la nómina, y cómo evitarlo."}, "pt": {"nav-home": "Início", "nav-tools": "Ferramentas Grátis", "nav-tool1": "Conversor de Horas Decimais", "nav-tool2": "Horas Extras", "nav-tool3": "Folha de Ponto", "nav-guides": "Guias", "nav-blog": "Blog", "nav-about": "Sobre", "eyebrow": "Blog", "h1": "O que um erro de conversão de horas realmente custa", "intro": "Um erro de alguns centésimos num contracheque parece insignificante. Multiplicado pelo número de funcionários e meses, deixa de ser.", "h2-1": "Um exemplo concreto", "p1": "Um erro de 0,10 hora com uma taxa de 15€ representa 1,50€ por contracheque. Em 50 funcionários e 12 meses, são 900€ de diferença acumulada no ano — antes mesmo de contar o tempo gasto corrigindo regularizações.", "h2-2": "De onde vêm esses erros", "p2": "A maioria dos erros vem da confusão entre minutos e centésimos durante o lançamento manual numa planilha, sem fórmula de conversão automatizada.", "h2-3": "Como evitá-los", "p3": "Automatizar a conversão (por meio de uma ferramenta dedicada ou uma fórmula de planilha confiável) elimina esse risco na origem, em vez de corrigi-lo depois.", "cta": "Converter minhas horas", "_title": "Blog | HoraDecimal.pro", "_desc": "O custo real de um erro de conversão de horas na folha de pagamento, e como evitá-lo."}, "hi": {"nav-home": "होम", "nav-tools": "मुफ़्त टूल्स", "nav-tool1": "दशमलव घंटा परिवर्तक", "nav-tool2": "ओवरटाइम कैलकुलेटर", "nav-tool3": "टाइमशीट", "nav-guides": "गाइड", "nav-blog": "ब्लॉग", "nav-about": "हमारे बारे में", "eyebrow": "ब्लॉग", "h1": "घंटा रूपांतरण त्रुटि की असली कीमत", "intro": "वेतन पर्ची पर कुछ सौवें हिस्से की त्रुटि नगण्य लगती है। कर्मचारियों और महीनों की संख्या से गुणा करने पर, यह बिल्कुल नगण्य नहीं रहती।", "h2-1": "एक ठोस उदाहरण", "p1": "15€ प्रति घंटा दर पर 0.10 घंटे की त्रुटि प्रति पर्ची 1.50€ के बराबर है। 50 कर्मचारियों और 12 महीनों में, यह साल भर में 900€ का संचित अंतर बन जाता है — सुधार में लगने वाले समय की गिनती किए बिना।", "h2-2": "ये त्रुटियां कहाँ से आती हैं", "p2": "अधिकांश त्रुटियां स्प्रेडशीट में मैन्युअल प्रविष्टि के दौरान, बिना किसी स्वचालित रूपांतरण सूत्र के, मिनट और सौवें भागों के बीच भ्रम से आती हैं।", "h2-3": "इनसे कैसे बचें", "p3": "रूपांतरण को स्वचालित बनाना (एक समर्पित उपकरण या विश्वसनीय स्प्रेडशीट सूत्र के माध्यम से) बाद में सुधारने की बजाय इस जोखिम को स्रोत पर ही समाप्त कर देता है।", "cta": "मेरे घंटे बदलें", "_title": "ब्लॉग | HoraDecimal.pro", "_desc": "वेतन में घंटा रूपांतरण त्रुटि की वास्तविक लागत, और इससे कैसे बचें।"}, "ar": {"nav-home": "الرئيسية", "nav-tools": "أدوات مجانية", "nav-tool1": "محول الساعات العشرية", "nav-tool2": "حاسبة الساعات الإضافية", "nav-tool3": "كشف الدوام", "nav-guides": "أدلة", "nav-blog": "المدونة", "nav-about": "من نحن", "eyebrow": "المدونة", "h1": "التكلفة الحقيقية لخطأ تحويل الساعات", "intro": "يبدو خطأ ببضع أجزاء من مئة على كشف الراتب أمرًا لا يُذكر. لكن إذا ضُرب في عدد الموظفين والأشهر، فلن يبقى كذلك.", "h2-1": "مثال ملموس", "p1": "خطأ بمقدار 0.10 ساعة بأجر 15 يورو في الساعة يمثل 1.50 يورو لكل كشف راتب. على 50 موظفًا و12 شهرًا، يصبح الفارق التراكمي 900 يورو في السنة — قبل احتساب الوقت المستغرق في تصحيح التسويات.", "h2-2": "من أين تأتي هذه الأخطاء", "p2": "تأتي معظم الأخطاء من الخلط بين الدقائق والأجزاء العشرية أثناء الإدخال اليدوي في جدول بيانات، دون صيغة تحويل آلية.", "h2-3": "كيفية تجنّبها", "p3": "أتمتة التحويل (عبر أداة مخصصة أو صيغة جدول بيانات موثوقة) تُزيل هذا الخطر من جذوره، بدلًا من تصحيحه لاحقًا.", "cta": "حوّل ساعاتي", "_title": "المدونة | HoraDecimal.pro", "_desc": "التكلفة الحقيقية لخطأ تحويل الساعات في الرواتب، وكيفية تجنّبه."}};</script>
+<script src="/i18n.js"></script>
 </body>
 </html>
