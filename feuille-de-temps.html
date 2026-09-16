@@ -9,128 +9,102 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebApplication","name":"Calculateur de Feuille de Temps","applicationCategory":"BusinessApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"}}
-</script>
 <style>
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  :root {
-    --ink: #1c2b22; --ink-soft: #5b6b62; --ink-mute: #8a978d;
-    --paper: #ffffff; --card: #fdeaea; --card-border: #f0caca;
-    --accent: #b02c2c; --accent-dark: #951f1f;
-    --line: #e2e5e9;
-  }
-  body { font-family: 'Space Grotesk', system-ui, sans-serif; background: var(--paper); color: var(--ink); line-height: 1.65; }
-  .wrap { max-width: 880px; margin: 0 auto; padding: 0 20px; }
-  header { background: #fff; border-bottom: 1px solid var(--line); padding: 16px 0; }
-  .header-row { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
-  .logo { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 1.05rem; text-decoration: none; color: var(--ink); }
-  .logo-icon { width: 36px; height: 36px; border-radius: 10px; background: var(--accent); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; }
-  nav.main-nav { display: flex; gap: 16px; flex-wrap: wrap; }
-  nav.main-nav a { color: var(--ink-soft); text-decoration: none; font-size: 0.85rem; font-weight: 600; }
-  nav.main-nav a:hover, nav.main-nav a.active { color: var(--accent); }
-  .nav-dropdown { position: relative; }
-  .dropdown-trigger { display: flex; align-items: center; gap: 4px; cursor: pointer; }
-  .dropdown-panel { display: none; position: absolute; top: 100%; left: 0; background: #fff; border: 1px solid var(--line); border-radius: 10px; padding: 6px; min-width: 220px; box-shadow: 0 10px 28px rgba(0,0,0,0.10); z-index: 30; margin-top: 0; }
-  .nav-dropdown:hover .dropdown-panel, .dropdown-panel.open { display: block; }
-  .dropdown-panel a { display: flex; align-items: center; gap: 8px; padding: 8px 10px; color: var(--ink); text-decoration: none; font-size: 0.85rem; border-radius: 6px; font-weight: 500; }
-  .dropdown-panel a:hover { background: var(--card); }
-  .hero { text-align: center; padding: 36px 0 10px; }
-  h1 { font-size: 1.9rem; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 10px; }
-  .lede { color: var(--ink-soft); font-size: 1rem; max-width: 500px; margin: 0 auto; }
-  .tool-zone { padding: 24px 0; max-width: 560px; margin: 0 auto; }
-  table { width: 100%; border-collapse: collapse; }
-  th, td { padding: 8px 6px; text-align: left; font-size: 0.85rem; }
-  th { color: var(--ink-mute); font-weight: 600; border-bottom: 1px solid var(--line); }
-  input[type=number] { width: 100%; padding: 8px; border: 1px solid var(--card-border); border-radius: 8px; font-family: inherit; font-size: 0.9rem; }
-  .btn { background: var(--accent); color: #fff; border: none; border-radius: 12px; padding: 14px 30px; font-weight: 700; font-size: 1rem; cursor: pointer; margin-top: 18px; width: 100%; }
-  .btn:hover { background: var(--accent-dark); }
-  .result-box { margin-top: 20px; background: var(--card); border: 1px solid var(--card-border); border-radius: 14px; padding: 20px; text-align: center; font-weight: 800; font-size: 1.3rem; color: var(--accent-dark); }
-  .ad-slot { background: #f3f4f6; border: 1px dashed #d1d5db; border-radius: 10px; text-align: center; padding: 14px; font-size: 0.7rem; color: var(--ink-mute); letter-spacing: 0.05em; text-transform: uppercase; margin: 26px 0; }
-  .faq { margin: 44px 0; }
-  .faq h2 { font-size: 1.35rem; margin-bottom: 16px; }
-  .faq-item { border-bottom: 1px solid var(--line); padding: 14px 0; }
-  .faq-item h3 { font-size: 0.98rem; margin-bottom: 6px; }
-  .faq-item p { color: var(--ink-soft); font-size: 0.9rem; }
-  footer { background: #fff; border-top: 1px solid var(--line); padding: 28px 0; margin-top: 40px; font-size: 0.82rem; color: var(--ink-mute); text-align: center; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --ink: #1c2b22; --ink-soft: #5b6b62; --ink-mute: #8a978d;
+  --paper: #ffffff; --card: #fdeaea; --card-border: #f0caca;
+  --accent: #b02c2c; --accent-dark: #951f1f;
+  --line: #e2e5e9;
+}
+body { font-family: 'Space Grotesk', system-ui, sans-serif; background: var(--paper); color: var(--ink); line-height: 1.65; }
+.wrap { max-width: 880px; margin: 0 auto; padding: 0 20px; }
+header { background: #fff; border-bottom: 1px solid var(--line); padding: 16px 0; }
+.header-row { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+.logo { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 1.05rem; text-decoration: none; color: var(--ink); }
+.logo-icon { width: 36px; height: 36px; border-radius: 10px; background: var(--accent); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; }
+nav.main-nav { display: flex; gap: 16px; flex-wrap: wrap; align-items:center; }
+nav.main-nav a { color: var(--ink-soft); text-decoration: none; font-size: 0.85rem; font-weight: 600; }
+nav.main-nav a:hover, nav.main-nav a.active { color: var(--accent); }
+.nav-dropdown { position: relative; }
+.dropdown-trigger { display: flex; align-items: center; gap: 4px; cursor: pointer; }
+.dropdown-panel { display: none; position: absolute; top: 100%; left: 0; background: #fff; border: 1px solid var(--line); border-radius: 10px; padding: 6px; min-width: 220px; box-shadow: 0 10px 28px rgba(0,0,0,0.10); z-index: 30; margin-top: 0; }
+.nav-dropdown:hover .dropdown-panel, .dropdown-panel.open { display: block; }
+.dropdown-panel a { display: flex; align-items: center; gap: 8px; padding: 8px 10px; color: var(--ink); text-decoration: none; font-size: 0.85rem; border-radius: 6px; font-weight: 500; }
+.dropdown-panel a:hover { background: var(--card); }
+.hero { text-align: center; padding: 40px 0 10px; }
+h1 { font-size: 1.9rem; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 10px; }
+.lede { color: var(--ink-soft); font-size: 1rem; max-width: 520px; margin: 0 auto; }
+.tool-zone { padding: 30px 0; max-width: 480px; margin: 0 auto; }
+.row { display: flex; flex-direction: column; gap: 6px; margin-bottom: 16px; }
+.row label { font-size: 0.82rem; color: var(--ink-soft); font-weight: 600; }
+input, table { width: 100%; }
+input[type=number] { padding: 12px 14px; border: 1px solid var(--card-border); border-radius: 10px; font-family: inherit; font-size: 1rem; }
+table { border-collapse: collapse; }
+th, td { padding: 8px 6px; text-align: left; font-size: 0.85rem; }
+th { color: var(--ink-mute); font-weight: 600; border-bottom: 1px solid var(--line); }
+[dir="rtl"] th, [dir="rtl"] td { text-align: right; }
+.btn { background: var(--accent); color: #fff; border: none; border-radius: 12px; padding: 14px 30px; font-weight: 700; font-size: 1rem; cursor: pointer; margin-top: 8px; width: 100%; }
+.btn:hover { background: var(--accent-dark); }
+.result-box { margin-top: 20px; background: var(--card); border: 1px solid var(--card-border); border-radius: 14px; padding: 20px; }
+.result-box .line { display: flex; justify-content: space-between; font-size: 0.92rem; margin-bottom: 6px; }
+.result-box .total { font-weight: 800; font-size: 1.2rem; color: var(--accent-dark); border-top: 1px solid var(--card-border); padding-top: 10px; margin-top: 8px; }
+.ad-slot { background: #f3f4f6; border: 1px dashed #d1d5db; border-radius: 10px; text-align: center; padding: 14px; font-size: 0.7rem; color: var(--ink-mute); letter-spacing: 0.05em; text-transform: uppercase; margin: 26px 0; }
+.faq { margin: 44px 0; }
+.faq h2 { font-size: 1.35rem; margin-bottom: 16px; }
+.faq-item { border-bottom: 1px solid var(--line); padding: 14px 0; }
+.faq-item h3 { font-size: 0.98rem; margin-bottom: 6px; }
+.faq-item p { color: var(--ink-soft); font-size: 0.9rem; }
+footer { background: #fff; border-top: 1px solid var(--line); padding: 28px 0; margin-top: 40px; font-size: 0.82rem; color: var(--ink-mute); text-align: center; }
+[dir="rtl"] main { text-align: right; }
+[dir="rtl"] .dropdown-panel { left: auto; right: 0; }
+
 </style>
 </head>
 <body>
 <header>
   <div class="wrap header-row">
     <a class="logo" href="/"><span class="logo-icon">H</span> HoraDecimal.pro</a>
-    <nav class="main-nav">
-      <a href="/">Home</a>
-      <div class="nav-dropdown">
-        <span class="dropdown-trigger" onclick="var p=this.nextElementSibling;p.classList.toggle('open')">
-          <a href="/tools.html" style="color:inherit;text-decoration:none;">Free Tools</a> <span style="font-size:0.7em;">&#9662;</span>
-        </span>
-        <div class="dropdown-panel">
-          <a href="/">Convertisseur Heures Décimales</a>
-          <a href="/heures-supplementaires.html">Heures Supplémentaires</a>
-          <a href="/feuille-de-temps.html">Feuille de Temps</a>
-        </div>
-      </div>
-      <a href="/guides.html">Guides</a>
-      <a href="/blog.html">Blog</a>
-      <a href="/about.html">About</a>
-    </nav>
+    <nav class="main-nav"><a href="/" data-i18n="nav-home">Home</a><div class="nav-dropdown"><span class="dropdown-trigger" onclick="var p=this.nextElementSibling;p.classList.toggle('open')"><a href="/tools.html" style="color:inherit;text-decoration:none;" data-i18n="nav-tools">Outils Gratuits</a> <span style="font-size:0.7em;">&#9662;</span></span><div class="dropdown-panel"><a href="/" data-i18n="nav-tool1">Convertisseur Heures Décimales</a><a href="/heures-supplementaires.html" data-i18n="nav-tool2">Heures Supplémentaires</a><a href="/feuille-de-temps.html" data-i18n="nav-tool3">Feuille de Temps</a></div></div><a href="/guides.html" data-i18n="nav-guides">Guides</a><a href="/blog.html" data-i18n="nav-blog">Blog</a><a href="/about.html" data-i18n="nav-about">À propos</a><div class="nav-dropdown"><span class="dropdown-trigger" onclick="var p=this.nextElementSibling;p.classList.toggle('open')"><span id="lang-current">FR</span> <span style="font-size:0.7em;">&#9662;</span></span><div class="dropdown-panel lang-panel"><a href="#" data-lang="fr" onclick="setLanguage('fr');return false;">Français</a><a href="#" data-lang="en" onclick="setLanguage('en');return false;">English</a><a href="#" data-lang="es" onclick="setLanguage('es');return false;">Español</a><a href="#" data-lang="pt" onclick="setLanguage('pt');return false;">Português</a><a href="#" data-lang="hi" onclick="setLanguage('hi');return false;">हिन्दी</a><a href="#" data-lang="ar" onclick="setLanguage('ar');return false;">العربية</a></div></div></nav>
   </div>
 </header>
-
 <main class="wrap">
-  <div class="hero">
-    <h1>Feuille de Temps Hebdomadaire</h1>
-    <p class="lede">Entre tes heures travaillées chaque jour, obtiens le total de la semaine en heures décimales.</p>
-  </div>
-
-  <div class="tool-zone">
-    <table>
-      <tr><th>Jour</th><th>Heures (ex: 7.5)</th></tr>
-      <tr><td>Lundi</td><td><input type="number" class="day" value="0" step="0.25"></td></tr>
-      <tr><td>Mardi</td><td><input type="number" class="day" value="0" step="0.25"></td></tr>
-      <tr><td>Mercredi</td><td><input type="number" class="day" value="0" step="0.25"></td></tr>
-      <tr><td>Jeudi</td><td><input type="number" class="day" value="0" step="0.25"></td></tr>
-      <tr><td>Vendredi</td><td><input type="number" class="day" value="0" step="0.25"></td></tr>
-      <tr><td>Samedi</td><td><input type="number" class="day" value="0" step="0.25"></td></tr>
-      <tr><td>Dimanche</td><td><input type="number" class="day" value="0" step="0.25"></td></tr>
-    </table>
-    <button class="btn" onclick="sumWeek()">Calculer le total</button>
-    <div class="result-box" id="result" style="display:none;"></div>
-  </div>
-
-  <div class="ad-slot">Publicité / Advertisement — AdSense</div>
-
-  <section class="faq">
-    <h2>Questions fréquentes</h2>
-    <div class="faq-item">
-      <h3>Comment saisir 7h30 ?</h3>
-      <p>Utilise le format décimal directement&nbsp;: 7,5 pour 7h30 (30 minutes = 0,5 heure). Notre convertisseur d'heures décimales peut t'aider si besoin.</p>
-    </div>
-    <div class="faq-item">
-      <h3>Le total inclut-il les heures supplémentaires ?</h3>
-      <p>Ce calculateur additionne simplement toutes les heures saisies — utilise le calculateur d'heures supplémentaires séparément pour la majoration.</p>
-    </div>
-    <div class="faq-item">
-      <h3>Est-ce gratuit et sans inscription ?</h3>
-      <p>Oui, entièrement gratuit, aucun compte à créer, tout se passe dans votre navigateur.</p>
-    </div>
-  </section>
-</main>
-
-<footer>
-  <div class="wrap">© HoraDecimal.pro</div>
-</footer>
-
+<div class="hero">
+  <h1 data-i18n="h1">Feuille de Temps Hebdomadaire</h1>
+  <p class="lede" data-i18n="lede">Entre tes heures travaillées chaque jour, obtiens le total de la semaine en heures décimales.</p>
+</div>
+<div class="tool-zone">
+  <table>
+    <tr><th data-i18n="th-day">Jour</th><th data-i18n="th-hours">Heures (ex: 7.5)</th></tr>
+    <tr><td data-i18n="d1">Lundi</td><td><input type="number" class="day" value="0" step="0.25"></td></tr><tr><td data-i18n="d2">Mardi</td><td><input type="number" class="day" value="0" step="0.25"></td></tr><tr><td data-i18n="d3">Mercredi</td><td><input type="number" class="day" value="0" step="0.25"></td></tr><tr><td data-i18n="d4">Jeudi</td><td><input type="number" class="day" value="0" step="0.25"></td></tr><tr><td data-i18n="d5">Vendredi</td><td><input type="number" class="day" value="0" step="0.25"></td></tr><tr><td data-i18n="d6">Samedi</td><td><input type="number" class="day" value="0" step="0.25"></td></tr><tr><td data-i18n="d7">Dimanche</td><td><input type="number" class="day" value="0" step="0.25"></td></tr>
+  </table>
+  <button class="btn" data-i18n="btn" onclick="sumWeek()">Calculer le total</button>
+  <div class="result-box" id="result" style="display:none;"></div>
+</div>
+<div class="ad-slot">Publicité / Advertisement — AdSense</div>
+<section class="faq">
+  <h2 data-i18n="faq-h2">Questions fréquentes</h2>
+  <div class="faq-item"><h3 data-i18n="faq1-q">Comment saisir 7h30&nbsp;?</h3><p data-i18n="faq1-a">Utilise le format décimal directement&nbsp;: 7,5 pour 7h30 (30 minutes = 0,5 heure). Notre convertisseur d'heures décimales peut t'aider si besoin.</p></div>
+  <div class="faq-item"><h3 data-i18n="faq2-q">Le total inclut-il les heures supplémentaires&nbsp;?</h3><p data-i18n="faq2-a">Ce calculateur additionne simplement toutes les heures saisies — utilise le calculateur d'heures supplémentaires séparément pour la majoration.</p></div>
+  <div class="faq-item"><h3 data-i18n="faq3-q">Est-ce gratuit et sans inscription&nbsp;?</h3><p data-i18n="faq3-a">Oui, entièrement gratuit, aucun compte à créer, tout se passe dans votre navigateur.</p></div>
+</section>
 <script>
 function sumWeek() {
   const inputs = document.querySelectorAll('.day');
   let total = 0;
   inputs.forEach(i => total += parseFloat(i.value) || 0);
   const el = document.getElementById('result');
-  el.textContent = 'Total semaine : ' + total.toFixed(2) + ' h';
+  const lang = document.documentElement.lang || 'fr';
+  const prefixes = {fr:'Total semaine : ', en:'Week total: ', es:'Total semana: ', pt:'Total da semana: ', hi:'\u0938\u092a\u094d\u0924\u093e\u0939 \u0915\u093e \u0915\u0941\u0932: ', ar:'\u0625\u062c\u0645\u0627\u0644\u064a \u0627\u0644\u0623\u0633\u0628\u0648\u0639: '};
+  el.textContent = (prefixes[lang] || prefixes.fr) + total.toFixed(2) + ' h';
   el.style.display = 'block';
 }
 </script>
+</main>
+<footer>
+  <div class="wrap">&copy; HoraDecimal.pro</div>
+</footer>
+<script>window.translations = {"fr": {"nav-home": "Home", "nav-tools": "Outils Gratuits", "nav-tool1": "Convertisseur Heures Décimales", "nav-tool2": "Heures Supplémentaires", "nav-tool3": "Feuille de Temps", "nav-guides": "Guides", "nav-blog": "Blog", "nav-about": "À propos", "h1": "Feuille de Temps Hebdomadaire", "lede": "Entre tes heures travaillées chaque jour, obtiens le total de la semaine en heures décimales.", "th-day": "Jour", "th-hours": "Heures (ex: 7.5)", "btn": "Calculer le total", "faq-h2": "Questions fréquentes", "faq1-q": "Comment saisir 7h30 ?", "faq1-a": "Utilise le format décimal directement : 7,5 pour 7h30 (30 minutes = 0,5 heure). Notre convertisseur d'heures décimales peut t'aider si besoin.", "faq2-q": "Le total inclut-il les heures supplémentaires ?", "faq2-a": "Ce calculateur additionne simplement toutes les heures saisies — utilise le calculateur d'heures supplémentaires séparément pour la majoration.", "faq3-q": "Est-ce gratuit et sans inscription ?", "faq3-a": "Oui, entièrement gratuit, aucun compte à créer, tout se passe dans votre navigateur.", "_title": "Calculateur de Feuille de Temps Hebdomadaire Gratuit | HoraDecimal.pro", "_desc": "Additionne tes heures travaillées jour par jour sur la semaine et obtiens le total en heures décimales, prêt pour la paie.", "d1": "Lundi", "d2": "Mardi", "d3": "Mercredi", "d4": "Jeudi", "d5": "Vendredi", "d6": "Samedi", "d7": "Dimanche"}, "en": {"nav-home": "Home", "nav-tools": "Free Tools", "nav-tool1": "Decimal Hours Converter", "nav-tool2": "Overtime Calculator", "nav-tool3": "Timesheet", "nav-guides": "Guides", "nav-blog": "Blog", "nav-about": "About", "h1": "Weekly Timesheet", "lede": "Enter your hours worked each day, get the week's total in decimal hours.", "th-day": "Day", "th-hours": "Hours (e.g. 7.5)", "btn": "Calculate total", "faq-h2": "Frequently asked questions", "faq1-q": "How do I enter 7h30?", "faq1-a": "Use the decimal format directly: 7.5 for 7h30 (30 minutes = 0.5 hour). Our decimal hours converter can help if needed.", "faq2-q": "Does the total include overtime?", "faq2-a": "This calculator simply adds up all hours entered — use the overtime calculator separately for the premium.", "faq3-q": "Is it free and without sign-up?", "faq3-a": "Yes, completely free, no account needed, everything runs in your browser.", "_title": "Free Weekly Timesheet Calculator | HoraDecimal.pro", "_desc": "Add up your hours worked day by day across the week and get the total in decimal hours, ready for payroll.", "d1": "Monday", "d2": "Tuesday", "d3": "Wednesday", "d4": "Thursday", "d5": "Friday", "d6": "Saturday", "d7": "Sunday"}, "es": {"nav-home": "Inicio", "nav-tools": "Herramientas Gratis", "nav-tool1": "Convertidor de Horas Decimales", "nav-tool2": "Horas Extras", "nav-tool3": "Hoja de Horas", "nav-guides": "Guías", "nav-blog": "Blog", "nav-about": "Acerca de", "h1": "Hoja de Horas Semanal", "lede": "Introduce tus horas trabajadas cada día y obtén el total semanal en horas decimales.", "th-day": "Día", "th-hours": "Horas (ej: 7.5)", "btn": "Calcular total", "faq-h2": "Preguntas frecuentes", "faq1-q": "¿Cómo introduzco 7h30?", "faq1-a": "Usa directamente el formato decimal: 7,5 para 7h30 (30 minutos = 0,5 horas). Nuestro convertidor de horas decimales puede ayudarte si lo necesitas.", "faq2-q": "¿El total incluye las horas extras?", "faq2-a": "Esta calculadora simplemente suma todas las horas introducidas — usa la calculadora de horas extras por separado para el recargo.", "faq3-q": "¿Es gratis y sin registro?", "faq3-a": "Sí, completamente gratis, sin necesidad de crear cuenta, todo ocurre en tu navegador.", "_title": "Calculadora Gratuita de Hoja de Horas Semanal | HoraDecimal.pro", "_desc": "Suma tus horas trabajadas día a día durante la semana y obtén el total en horas decimales, listo para la nómina.", "d1": "Lunes", "d2": "Martes", "d3": "Miércoles", "d4": "Jueves", "d5": "Viernes", "d6": "Sábado", "d7": "Domingo"}, "pt": {"nav-home": "Início", "nav-tools": "Ferramentas Grátis", "nav-tool1": "Conversor de Horas Decimais", "nav-tool2": "Horas Extras", "nav-tool3": "Folha de Ponto", "nav-guides": "Guias", "nav-blog": "Blog", "nav-about": "Sobre", "h1": "Folha de Ponto Semanal", "lede": "Insira suas horas trabalhadas a cada dia e obtenha o total da semana em horas decimais.", "th-day": "Dia", "th-hours": "Horas (ex: 7.5)", "btn": "Calcular total", "faq-h2": "Perguntas frequentes", "faq1-q": "Como insiro 7h30?", "faq1-a": "Use diretamente o formato decimal: 7,5 para 7h30 (30 minutos = 0,5 hora). Nosso conversor de horas decimais pode ajudar, se necessário.", "faq2-q": "O total inclui horas extras?", "faq2-a": "Esta calculadora apenas soma todas as horas inseridas — use a calculadora de horas extras separadamente para o adicional.", "faq3-q": "É gratuito e sem cadastro?", "faq3-a": "Sim, totalmente gratuito, sem necessidade de criar conta, tudo acontece no seu navegador.", "_title": "Calculadora Gratuita de Folha de Ponto Semanal | HoraDecimal.pro", "_desc": "Some suas horas trabalhadas dia a dia ao longo da semana e obtenha o total em horas decimais, pronto para a folha de pagamento.", "d1": "Segunda", "d2": "Terça", "d3": "Quarta", "d4": "Quinta", "d5": "Sexta", "d6": "Sábado", "d7": "Domingo"}, "hi": {"nav-home": "होम", "nav-tools": "मुफ़्त टूल्स", "nav-tool1": "दशमलव घंटा परिवर्तक", "nav-tool2": "ओवरटाइम कैलकुलेटर", "nav-tool3": "टाइमशीट", "nav-guides": "गाइड", "nav-blog": "ब्लॉग", "nav-about": "हमारे बारे में", "h1": "साप्ताहिक टाइमशीट", "lede": "हर दिन अपने काम किए गए घंटे दर्ज करें, सप्ताह का कुल दशमलव घंटों में प्राप्त करें।", "th-day": "दिन", "th-hours": "घंटे (उदा: 7.5)", "btn": "कुल गणना करें", "faq-h2": "अक्सर पूछे जाने वाले प्रश्न", "faq1-q": "7h30 कैसे दर्ज करें?", "faq1-a": "सीधे दशमलव प्रारूप का उपयोग करें: 7h30 के लिए 7.5 (30 मिनट = 0.5 घंटा)। यदि आवश्यक हो तो हमारा दशमलव घंटा परिवर्तक मदद कर सकता है।", "faq2-q": "क्या कुल में ओवरटाइम शामिल है?", "faq2-a": "यह कैलकुलेटर केवल दर्ज किए गए सभी घंटों को जोड़ता है — अतिरिक्त राशि के लिए अलग से ओवरटाइम कैलकुलेटर का उपयोग करें।", "faq3-q": "क्या यह मुफ़्त और बिना पंजीकरण के है?", "faq3-a": "हां, पूरी तरह मुफ़्त, किसी खाते की आवश्यकता नहीं, सब कुछ आपके ब्राउज़र में होता है।", "_title": "मुफ़्त साप्ताहिक टाइमशीट कैलकुलेटर | HoraDecimal.pro", "_desc": "सप्ताह भर अपने दैनिक कार्य घंटे जोड़ें और वेतन के लिए तैयार दशमलव घंटों में कुल प्राप्त करें।", "d1": "सोमवार", "d2": "मंगलवार", "d3": "बुधवार", "d4": "गुरुवार", "d5": "शुक्रवार", "d6": "शनिवार", "d7": "रविवार"}, "ar": {"nav-home": "الرئيسية", "nav-tools": "أدوات مجانية", "nav-tool1": "محول الساعات العشرية", "nav-tool2": "حاسبة الساعات الإضافية", "nav-tool3": "كشف الدوام", "nav-guides": "أدلة", "nav-blog": "المدونة", "nav-about": "من نحن", "h1": "كشف الدوام الأسبوعي", "lede": "أدخل ساعات عملك كل يوم، واحصل على إجمالي الأسبوع بالساعات العشرية.", "th-day": "اليوم", "th-hours": "الساعات (مثال: 7.5)", "btn": "احسب الإجمالي", "faq-h2": "الأسئلة الشائعة", "faq1-q": "كيف أُدخل 7h30؟", "faq1-a": "استخدم الصيغة العشرية مباشرة: 7.5 لـ 7h30 (30 دقيقة = 0.5 ساعة). يمكن لمحول الساعات العشرية لدينا مساعدتك عند الحاجة.", "faq2-q": "هل يشمل الإجمالي الساعات الإضافية؟", "faq2-a": "تقوم هذه الحاسبة فقط بجمع كل الساعات المدخلة — استخدم حاسبة الساعات الإضافية بشكل منفصل لحساب العلاوة.", "faq3-q": "هل هي مجانية ودون تسجيل؟", "faq3-a": "نعم، مجانية بالكامل، لا حاجة لإنشاء حساب، كل شيء يتم داخل متصفحك.", "_title": "حاسبة كشف الدوام الأسبوعي المجانية | HoraDecimal.pro", "_desc": "اجمع ساعات عملك يومًا بيوم على مدار الأسبوع واحصل على الإجمالي بالساعات العشرية، جاهزًا للرواتب.", "d1": "الإثنين", "d2": "الثلاثاء", "d3": "الأربعاء", "d4": "الخميس", "d5": "الجمعة", "d6": "السبت", "d7": "الأحد"}};</script>
+<script src="/i18n.js"></script>
 </body>
 </html>
