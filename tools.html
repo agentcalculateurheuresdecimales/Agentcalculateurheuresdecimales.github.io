@@ -18,12 +18,12 @@
   --line: #e2e5e9;
 }
 body { font-family: 'Space Grotesk', system-ui, sans-serif; background: var(--paper); color: var(--ink); line-height: 1.65; }
-.wrap { max-width: 760px; margin: 0 auto; padding: 0 20px; }
+.wrap { max-width: 780px; margin: 0 auto; padding: 0 20px; }
 header { background: #fff; border-bottom: 1px solid var(--line); padding: 16px 0; }
 .header-row { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
 .logo { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 1.05rem; text-decoration: none; color: var(--ink); }
 .logo-icon { width: 36px; height: 36px; border-radius: 10px; background: var(--accent); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; }
-nav.main-nav { display: flex; gap: 16px; flex-wrap: wrap; }
+nav.main-nav { display: flex; gap: 16px; flex-wrap: wrap; align-items:center; }
 nav.main-nav a { color: var(--ink-soft); text-decoration: none; font-size: 0.85rem; font-weight: 600; }
 nav.main-nav a:hover, nav.main-nav a.active { color: var(--accent); }
 main { padding: 40px 0 60px; }
@@ -36,49 +36,50 @@ p { color: var(--ink-soft); font-size: 0.96rem; margin-bottom: 12px; }
 .tool-card { background: var(--card); border: 1px solid var(--card-border); border-radius: 12px; padding: 20px; text-decoration: none; color: var(--ink); display: block; }
 .tool-card h2 { margin: 0 0 6px; font-size: 1.05rem; }
 .tool-card p { font-size: 0.85rem; margin: 0; }
-.soon { opacity: 0.5; }
 .ad-slot { background: #f3f4f6; border: 1px dashed #d1d5db; border-radius: 10px; text-align: center; padding: 14px; font-size: 0.7rem; color: var(--ink-mute); letter-spacing: 0.05em; text-transform: uppercase; margin: 26px 0; }
 .card { background: var(--card); border: 1px solid var(--card-border); border-radius: 12px; padding: 18px 20px; margin: 20px 0; }
 .card p { color: var(--ink); font-size: 0.92rem; margin-bottom: 0; }
 a.cta { display: inline-block; background: var(--accent); color: #fff; text-decoration: none; border-radius: 10px; padding: 12px 24px; font-weight: 700; font-size: 0.95rem; margin-top: 10px; }
 footer { background: #fff; border-top: 1px solid var(--line); padding: 28px 0; margin-top: 40px; font-size: 0.82rem; color: var(--ink-mute); text-align: center; }
-
-  .nav-dropdown { position: relative; }
-  .dropdown-trigger { display: flex; align-items: center; gap: 4px; cursor: pointer; }
-  .dropdown-panel { display: none; position: absolute; top: 100%; left: 0; background: #fff; border: 1px solid var(--line); border-radius: 10px; padding: 6px; min-width: 200px; box-shadow: 0 10px 28px rgba(0,0,0,0.10); z-index: 30; margin-top: 0; }
-  .nav-dropdown:hover .dropdown-panel, .dropdown-panel.open { display: block; }
-  .dropdown-panel a { display: flex; align-items: center; gap: 8px; padding: 8px 10px; color: var(--ink); text-decoration: none; font-size: 0.85rem; border-radius: 6px; font-weight: 500; }
-  .dropdown-panel a:hover { background: var(--card); }
-  .dropdown-soon { padding: 8px 10px; color: var(--ink-mute); font-size: 0.78rem; font-style: italic; }
+.nav-dropdown { position: relative; }
+.dropdown-trigger { display: flex; align-items: center; gap: 4px; cursor: pointer; }
+.dropdown-panel { display: none; position: absolute; top: 100%; left: 0; background: #fff; border: 1px solid var(--line); border-radius: 10px; padding: 6px; min-width: 200px; box-shadow: 0 10px 28px rgba(0,0,0,0.10); z-index: 30; margin-top: 0; }
+.nav-dropdown:hover .dropdown-panel, .dropdown-panel.open { display: block; }
+.dropdown-panel a { display: flex; align-items: center; gap: 8px; padding: 8px 10px; color: var(--ink); text-decoration: none; font-size: 0.85rem; border-radius: 6px; font-weight: 500; }
+.dropdown-panel a:hover { background: var(--card); }
+[dir="rtl"] main { text-align: right; }
+[dir="rtl"] .dropdown-panel { left: auto; right: 0; }
 </style>
 </head>
 <body>
 <header>
   <div class="wrap header-row">
     <a class="logo" href="/"><span class="logo-icon">H</span> HoraDecimal.pro</a>
-    <nav class="main-nav"><a href="/">Home</a><div class="nav-dropdown"><span class="dropdown-trigger" onclick="var p=this.nextElementSibling;p.classList.toggle('open')"><a href="/tools.html" style="color:inherit;text-decoration:none;">Free Tools</a> <span style="font-size:0.7em;">▾</span></span><div class="dropdown-panel"><a href="/">Convertisseur Heures</a><a href="/heures-supplementaires.html">Heures Supplémentaires</a><a href="/feuille-de-temps.html">Feuille de Temps</a></div></div><a href="/guides.html">Guides</a><a href="/blog.html">Blog</a><a href="/about.html">About</a></nav>
+    <nav class="main-nav"><a href="/" data-i18n="nav-home">Home</a><div class="nav-dropdown"><span class="dropdown-trigger" onclick="var p=this.nextElementSibling;p.classList.toggle('open')"><a href="/tools.html" style="color:inherit;text-decoration:none;" data-i18n="nav-tools">Outils Gratuits</a> <span style="font-size:0.7em;">&#9662;</span></span><div class="dropdown-panel"><a href="/" data-i18n="nav-tool1">Convertisseur Heures Décimales</a><a href="/heures-supplementaires.html" data-i18n="nav-tool2">Heures Supplémentaires</a><a href="/feuille-de-temps.html" data-i18n="nav-tool3">Feuille de Temps</a></div></div><a href="/guides.html" data-i18n="nav-guides">Guides</a><a href="/blog.html" data-i18n="nav-blog">Blog</a><a href="/about.html" data-i18n="nav-about">À propos</a><div class="nav-dropdown"><span class="dropdown-trigger" onclick="var p=this.nextElementSibling;p.classList.toggle('open')"><span id="lang-current">FR</span> <span style="font-size:0.7em;">&#9662;</span></span><div class="dropdown-panel lang-panel"><a href="#" data-lang="fr" onclick="setLanguage('fr');return false;">Français</a><a href="#" data-lang="en" onclick="setLanguage('en');return false;">English</a><a href="#" data-lang="es" onclick="setLanguage('es');return false;">Español</a><a href="#" data-lang="pt" onclick="setLanguage('pt');return false;">Português</a><a href="#" data-lang="hi" onclick="setLanguage('hi');return false;">हिन्दी</a><a href="#" data-lang="ar" onclick="setLanguage('ar');return false;">العربية</a></div></div></nav>
   </div>
 </header>
 <main class="wrap">
-  <h1>Outils gratuits</h1>
-  <p class="lede">Outils gratuits de conversion de temps et de calcul de paie, sans inscription.</p>
-  <div class="tool-grid">
-    <a class="tool-card" href="/">
-      <h2>Convertisseur Heures Décimales</h2>
-      <p>Convertit HH:MM en centièmes d'heures et calcule un salaire brut/net.</p>
-    </a>
-    <a class="tool-card" href="/heures-supplementaires.html">
-      <h2>Heures Supplémentaires</h2>
-      <p>Calcule la majoration due sur tes heures supplémentaires selon le taux applicable.</p>
-    </a>
-    <a class="tool-card" href="/feuille-de-temps.html">
-      <h2>Feuille de Temps</h2>
-      <p>Additionne tes heures travaillées jour par jour sur la semaine.</p>
-    </a>
-  </div>
+<h1 data-i18n="h1">Outils gratuits</h1>
+<p class="lede" data-i18n="lede">Outils gratuits de conversion de temps et de calcul de paie, sans inscription.</p>
+<div class="tool-grid">
+  <a class="tool-card" href="/">
+    <h2 data-i18n="card1-title">Convertisseur Heures Décimales</h2>
+    <p data-i18n="card1-desc">Convertit HH:MM en centièmes d'heures et calcule un salaire brut/net.</p>
+  </a>
+  <a class="tool-card" href="/heures-supplementaires.html">
+    <h2 data-i18n="card2-title">Heures Supplémentaires</h2>
+    <p data-i18n="card2-desc">Calcule la majoration due sur tes heures supplémentaires selon le taux applicable.</p>
+  </a>
+  <a class="tool-card" href="/feuille-de-temps.html">
+    <h2 data-i18n="card3-title">Feuille de Temps</h2>
+    <p data-i18n="card3-desc">Additionne tes heures travaillées jour par jour sur la semaine.</p>
+  </a>
+</div>
 </main>
 <footer>
-  <div class="wrap">© HoraDecimal.pro</div>
+  <div class="wrap">&copy; HoraDecimal.pro</div>
 </footer>
+<script>window.translations = {"fr": {"nav-home": "Home", "nav-tools": "Outils Gratuits", "nav-tool1": "Convertisseur Heures Décimales", "nav-tool2": "Heures Supplémentaires", "nav-tool3": "Feuille de Temps", "nav-guides": "Guides", "nav-blog": "Blog", "nav-about": "À propos", "h1": "Outils gratuits", "lede": "Outils gratuits de conversion de temps et de calcul de paie, sans inscription.", "card1-title": "Convertisseur Heures Décimales", "card1-desc": "Convertit HH:MM en centièmes d'heures et calcule un salaire brut/net.", "card2-title": "Heures Supplémentaires", "card2-desc": "Calcule la majoration due sur tes heures supplémentaires selon le taux applicable.", "card3-title": "Feuille de Temps", "card3-desc": "Additionne tes heures travaillées jour par jour sur la semaine.", "_title": "Tous les Outils Gratuits | HoraDecimal.pro", "_desc": "La liste des outils gratuits de conversion d'heures et de calcul de paie disponibles sur ce site."}, "en": {"nav-home": "Home", "nav-tools": "Free Tools", "nav-tool1": "Decimal Hours Converter", "nav-tool2": "Overtime Calculator", "nav-tool3": "Timesheet", "nav-guides": "Guides", "nav-blog": "Blog", "nav-about": "About", "h1": "Free tools", "lede": "Free time-conversion and payroll tools, no sign-up required.", "card1-title": "Decimal Hours Converter", "card1-desc": "Converts HH:MM into hundredths of an hour and estimates gross/net pay.", "card2-title": "Overtime Calculator", "card2-desc": "Calculates the premium owed on your overtime hours at the applicable rate.", "card3-title": "Timesheet", "card3-desc": "Adds up your daily worked hours across the week.", "_title": "All Free Tools | HoraDecimal.pro", "_desc": "The list of free time-conversion and payroll estimation tools available on this site."}, "es": {"nav-home": "Inicio", "nav-tools": "Herramientas Gratis", "nav-tool1": "Convertidor de Horas Decimales", "nav-tool2": "Horas Extras", "nav-tool3": "Hoja de Horas", "nav-guides": "Guías", "nav-blog": "Blog", "nav-about": "Acerca de", "h1": "Herramientas gratuitas", "lede": "Herramientas gratuitas de conversión de tiempo y cálculo de nómina, sin registro.", "card1-title": "Convertidor de Horas Decimales", "card1-desc": "Convierte HH:MM en centésimas de hora y calcula un salario bruto/neto.", "card2-title": "Horas Extras", "card2-desc": "Calcula el recargo adeudado por tus horas extras según la tasa aplicable.", "card3-title": "Hoja de Horas", "card3-desc": "Suma tus horas trabajadas día a día durante la semana.", "_title": "Todas las Herramientas Gratuitas | HoraDecimal.pro", "_desc": "La lista de herramientas gratuitas de conversión de tiempo y cálculo de nómina disponibles en este sitio."}, "pt": {"nav-home": "Início", "nav-tools": "Ferramentas Grátis", "nav-tool1": "Conversor de Horas Decimais", "nav-tool2": "Horas Extras", "nav-tool3": "Folha de Ponto", "nav-guides": "Guias", "nav-blog": "Blog", "nav-about": "Sobre", "h1": "Ferramentas gratuitas", "lede": "Ferramentas gratuitas de conversão de tempo e cálculo de folha de pagamento, sem cadastro.", "card1-title": "Conversor de Horas Decimais", "card1-desc": "Converte HH:MM em centésimos de hora e calcula um salário bruto/líquido.", "card2-title": "Horas Extras", "card2-desc": "Calcula o adicional devido pelas suas horas extras conforme a taxa aplicável.", "card3-title": "Folha de Ponto", "card3-desc": "Soma suas horas trabalhadas dia a dia ao longo da semana.", "_title": "Todas as Ferramentas Gratuitas | HoraDecimal.pro", "_desc": "A lista de ferramentas gratuitas de conversão de tempo e cálculo de folha de pagamento disponíveis neste site."}, "hi": {"nav-home": "होम", "nav-tools": "मुफ़्त टूल्स", "nav-tool1": "दशमलव घंटा परिवर्तक", "nav-tool2": "ओवरटाइम कैलकुलेटर", "nav-tool3": "टाइमशीट", "nav-guides": "गाइड", "nav-blog": "ब्लॉग", "nav-about": "हमारे बारे में", "h1": "मुफ़्त टूल्स", "lede": "समय रूपांतरण और वेतन गणना के लिए मुफ़्त टूल्स, बिना पंजीकरण के।", "card1-title": "दशमलव घंटा परिवर्तक", "card1-desc": "HH:MM को घंटे के सौवें भाग में बदलता है और सकल/शुद्ध वेतन की गणना करता है।", "card2-title": "ओवरटाइम कैलकुलेटर", "card2-desc": "लागू दर के अनुसार आपके ओवरटाइम घंटों पर देय अतिरिक्त राशि की गणना करता है।", "card3-title": "टाइमशीट", "card3-desc": "सप्ताह के दौरान आपके दैनिक कार्य घंटों को जोड़ता है।", "_title": "सभी मुफ़्त टूल्स | HoraDecimal.pro", "_desc": "इस साइट पर उपलब्ध मुफ़्त समय रूपांतरण और वेतन अनुमान उपकरणों की सूची।"}, "ar": {"nav-home": "الرئيسية", "nav-tools": "أدوات مجانية", "nav-tool1": "محول الساعات العشرية", "nav-tool2": "حاسبة الساعات الإضافية", "nav-tool3": "كشف الدوام", "nav-guides": "أدلة", "nav-blog": "المدونة", "nav-about": "من نحن", "h1": "أدوات مجانية", "lede": "أدوات مجانية لتحويل الوقت وحساب الرواتب، دون الحاجة للتسجيل.", "card1-title": "محول الساعات العشرية", "card1-desc": "يحوّل الصيغة HH:MM إلى أجزاء عشرية من الساعة ويحسب الراتب الإجمالي/الصافي.", "card2-title": "حاسبة الساعات الإضافية", "card2-desc": "تحسب العلاوة المستحقة عن ساعات عملك الإضافية وفق النسبة المطبقة.", "card3-title": "كشف الدوام", "card3-desc": "تجمع ساعات عملك اليومية على مدار الأسبوع.", "_title": "جميع الأدوات المجانية | HoraDecimal.pro", "_desc": "قائمة أدوات تحويل الوقت وتقدير الرواتب المجانية المتوفرة على هذا الموقع."}};</script>
+<script src="/i18n.js"></script>
 </body>
 </html>
