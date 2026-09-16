@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://axolscozytimer-cmyk.github.io/sitemap.xml
+Sitemap: https://agentcalculateurheuresdecimales.github.io/sitemap.xml
