@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>À Propos | HoraDecimal.pro</title>
-<meta name="description" content="Qui édite cet outil gratuit de conversion d'heures décimales, et pourquoi il existe.">
+<title>À propos | HoraDecimal.pro</title>
+<meta name="description" content="En savoir plus sur HoraDecimal.pro, outil gratuit de conversion d'heures décimales et d'estimation de paie.">
 <link rel="canonical" href="https://axolscozytimer-cmyk.github.io/about.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,12 +18,12 @@
   --line: #e2e5e9;
 }
 body { font-family: 'Space Grotesk', system-ui, sans-serif; background: var(--paper); color: var(--ink); line-height: 1.65; }
-.wrap { max-width: 760px; margin: 0 auto; padding: 0 20px; }
+.wrap { max-width: 780px; margin: 0 auto; padding: 0 20px; }
 header { background: #fff; border-bottom: 1px solid var(--line); padding: 16px 0; }
 .header-row { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
 .logo { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 1.05rem; text-decoration: none; color: var(--ink); }
 .logo-icon { width: 36px; height: 36px; border-radius: 10px; background: var(--accent); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; }
-nav.main-nav { display: flex; gap: 16px; flex-wrap: wrap; }
+nav.main-nav { display: flex; gap: 16px; flex-wrap: wrap; align-items:center; }
 nav.main-nav a { color: var(--ink-soft); text-decoration: none; font-size: 0.85rem; font-weight: 600; }
 nav.main-nav a:hover, nav.main-nav a.active { color: var(--accent); }
 main { padding: 40px 0 60px; }
@@ -36,45 +36,41 @@ p { color: var(--ink-soft); font-size: 0.96rem; margin-bottom: 12px; }
 .tool-card { background: var(--card); border: 1px solid var(--card-border); border-radius: 12px; padding: 20px; text-decoration: none; color: var(--ink); display: block; }
 .tool-card h2 { margin: 0 0 6px; font-size: 1.05rem; }
 .tool-card p { font-size: 0.85rem; margin: 0; }
-.soon { opacity: 0.5; }
 .ad-slot { background: #f3f4f6; border: 1px dashed #d1d5db; border-radius: 10px; text-align: center; padding: 14px; font-size: 0.7rem; color: var(--ink-mute); letter-spacing: 0.05em; text-transform: uppercase; margin: 26px 0; }
 .card { background: var(--card); border: 1px solid var(--card-border); border-radius: 12px; padding: 18px 20px; margin: 20px 0; }
 .card p { color: var(--ink); font-size: 0.92rem; margin-bottom: 0; }
 a.cta { display: inline-block; background: var(--accent); color: #fff; text-decoration: none; border-radius: 10px; padding: 12px 24px; font-weight: 700; font-size: 0.95rem; margin-top: 10px; }
 footer { background: #fff; border-top: 1px solid var(--line); padding: 28px 0; margin-top: 40px; font-size: 0.82rem; color: var(--ink-mute); text-align: center; }
-
-  .nav-dropdown { position: relative; }
-  .dropdown-trigger { display: flex; align-items: center; gap: 4px; cursor: pointer; }
-  .dropdown-panel { display: none; position: absolute; top: 100%; left: 0; background: #fff; border: 1px solid var(--line); border-radius: 10px; padding: 6px; min-width: 200px; box-shadow: 0 10px 28px rgba(0,0,0,0.10); z-index: 30; margin-top: 0; }
-  .nav-dropdown:hover .dropdown-panel, .dropdown-panel.open { display: block; }
-  .dropdown-panel a { display: flex; align-items: center; gap: 8px; padding: 8px 10px; color: var(--ink); text-decoration: none; font-size: 0.85rem; border-radius: 6px; font-weight: 500; }
-  .dropdown-panel a:hover { background: var(--card); }
-  .dropdown-soon { padding: 8px 10px; color: var(--ink-mute); font-size: 0.78rem; font-style: italic; }
+.nav-dropdown { position: relative; }
+.dropdown-trigger { display: flex; align-items: center; gap: 4px; cursor: pointer; }
+.dropdown-panel { display: none; position: absolute; top: 100%; left: 0; background: #fff; border: 1px solid var(--line); border-radius: 10px; padding: 6px; min-width: 200px; box-shadow: 0 10px 28px rgba(0,0,0,0.10); z-index: 30; margin-top: 0; }
+.nav-dropdown:hover .dropdown-panel, .dropdown-panel.open { display: block; }
+.dropdown-panel a { display: flex; align-items: center; gap: 8px; padding: 8px 10px; color: var(--ink); text-decoration: none; font-size: 0.85rem; border-radius: 6px; font-weight: 500; }
+.dropdown-panel a:hover { background: var(--card); }
+[dir="rtl"] main { text-align: right; }
+[dir="rtl"] .dropdown-panel { left: auto; right: 0; }
 </style>
 </head>
 <body>
 <header>
   <div class="wrap header-row">
     <a class="logo" href="/"><span class="logo-icon">H</span> HoraDecimal.pro</a>
-    <nav class="main-nav"><a href="/">Home</a><div class="nav-dropdown"><span class="dropdown-trigger" onclick="var p=this.nextElementSibling;p.classList.toggle('open')"><a href="/tools.html" style="color:inherit;text-decoration:none;">Free Tools</a> <span style="font-size:0.7em;">▾</span></span><div class="dropdown-panel"><a href="/">Convertisseur Heures</a><a href="/heures-supplementaires.html">Heures Supplémentaires</a><a href="/feuille-de-temps.html">Feuille de Temps</a></div></div><a href="/guides.html">Guides</a><a href="/blog.html">Blog</a><a href="/about.html" class="active">About</a></nav>
+    <nav class="main-nav"><a href="/" data-i18n="nav-home">Home</a><div class="nav-dropdown"><span class="dropdown-trigger" onclick="var p=this.nextElementSibling;p.classList.toggle('open')"><a href="/tools.html" style="color:inherit;text-decoration:none;" data-i18n="nav-tools">Outils Gratuits</a> <span style="font-size:0.7em;">&#9662;</span></span><div class="dropdown-panel"><a href="/" data-i18n="nav-tool1">Convertisseur Heures Décimales</a><a href="/heures-supplementaires.html" data-i18n="nav-tool2">Heures Supplémentaires</a><a href="/feuille-de-temps.html" data-i18n="nav-tool3">Feuille de Temps</a></div></div><a href="/guides.html" data-i18n="nav-guides">Guides</a><a href="/blog.html" data-i18n="nav-blog">Blog</a><a href="/about.html" data-i18n="nav-about" class="active">À propos</a><div class="nav-dropdown"><span class="dropdown-trigger" onclick="var p=this.nextElementSibling;p.classList.toggle('open')"><span id="lang-current">FR</span> <span style="font-size:0.7em;">&#9662;</span></span><div class="dropdown-panel lang-panel"><a href="#" data-lang="fr" onclick="setLanguage('fr');return false;">Français</a><a href="#" data-lang="en" onclick="setLanguage('en');return false;">English</a><a href="#" data-lang="es" onclick="setLanguage('es');return false;">Español</a><a href="#" data-lang="pt" onclick="setLanguage('pt');return false;">Português</a><a href="#" data-lang="hi" onclick="setLanguage('hi');return false;">हिन्दी</a><a href="#" data-lang="ar" onclick="setLanguage('ar');return false;">العربية</a></div></div></nav>
   </div>
 </header>
 <main class="wrap">
-  <h1>À propos de ce site</h1>
-  <p>Ce site propose un convertisseur gratuit d'heures décimales et un estimateur de paie, pensé pour un usage rapide sans tableur complexe à configurer.</p>
-
-  <h2>Pourquoi ce site existe</h2>
-  <p>La conversion minutes/centièmes est une source d'erreur récurrente en gestion de paie. L'objectif ici est de fiabiliser ce calcul en un clic, gratuitement.</p>
-
-  <div class="card">
-    <p>Les résultats de paie et de conversion d'heures sont fournis à titre d'estimation. Validez toujours avec votre service de paie ou un professionnel qualifié pour un usage officiel.</p>
-  </div>
-
-  <h2>Nous contacter</h2>
-  <p>Pour toute question&nbsp;: <a href="mailto:usefultoolswebsite@gmail.com" style="color:var(--accent-dark);">usefultoolswebsite@gmail.com</a></p>
+<h1 data-i18n="h1">À propos de ce site</h1>
+<p data-i18n="p1">Ce site propose un convertisseur gratuit d'heures décimales et un estimateur de paie, pensé pour un usage rapide sans tableur complexe à configurer.</p>
+<h2 data-i18n="h2-1">Pourquoi ce site existe</h2>
+<p data-i18n="p2">La conversion minutes/centièmes est une source d'erreur récurrente en gestion de paie. L'objectif ici est de fiabiliser ce calcul en un clic, gratuitement.</p>
+<div class="card"><p data-i18n="card">Les résultats de paie et de conversion d'heures sont fournis à titre d'estimation. Validez toujours avec votre service de paie ou un professionnel qualifié pour un usage officiel.</p></div>
+<h2 data-i18n="h2-2">Nous contacter</h2>
+<p><span data-i18n="contact">Pour toute question&nbsp;: </span><a href="mailto:usefultoolswebsite@gmail.com" style="color:var(--accent-dark);">usefultoolswebsite@gmail.com</a></p>
 </main>
 <footer>
-  <div class="wrap">© HoraDecimal.pro</div>
+  <div class="wrap">&copy; HoraDecimal.pro</div>
 </footer>
+<script>window.translations = {"fr": {"nav-home": "Home", "nav-tools": "Outils Gratuits", "nav-tool1": "Convertisseur Heures Décimales", "nav-tool2": "Heures Supplémentaires", "nav-tool3": "Feuille de Temps", "nav-guides": "Guides", "nav-blog": "Blog", "nav-about": "À propos", "h1": "À propos de ce site", "p1": "Ce site propose un convertisseur gratuit d'heures décimales et un estimateur de paie, pensé pour un usage rapide sans tableur complexe à configurer.", "h2-1": "Pourquoi ce site existe", "p2": "La conversion minutes/centièmes est une source d'erreur récurrente en gestion de paie. L'objectif ici est de fiabiliser ce calcul en un clic, gratuitement.", "card": "Les résultats de paie et de conversion d'heures sont fournis à titre d'estimation. Validez toujours avec votre service de paie ou un professionnel qualifié pour un usage officiel.", "h2-2": "Nous contacter", "contact": "Pour toute question : ", "_title": "À propos | HoraDecimal.pro", "_desc": "En savoir plus sur HoraDecimal.pro, outil gratuit de conversion d'heures décimales et d'estimation de paie."}, "en": {"nav-home": "Home", "nav-tools": "Free Tools", "nav-tool1": "Decimal Hours Converter", "nav-tool2": "Overtime Calculator", "nav-tool3": "Timesheet", "nav-guides": "Guides", "nav-blog": "Blog", "nav-about": "About", "h1": "About this site", "p1": "This site offers a free decimal-hours converter and a payroll estimator, designed for quick use without any complex spreadsheet to set up.", "h2-1": "Why this site exists", "p2": "Minutes-to-hundredths conversion is a recurring source of error in payroll management. The goal here is to make that calculation reliable in one click, for free.", "card": "Payroll and hours-conversion results are provided as estimates. Always verify with your payroll department or a qualified professional for official use.", "h2-2": "Contact us", "contact": "For any question: ", "_title": "About | HoraDecimal.pro", "_desc": "Learn more about HoraDecimal.pro, a free decimal-hours conversion and payroll estimation tool."}, "es": {"nav-home": "Inicio", "nav-tools": "Herramientas Gratis", "nav-tool1": "Convertidor de Horas Decimales", "nav-tool2": "Horas Extras", "nav-tool3": "Hoja de Horas", "nav-guides": "Guías", "nav-blog": "Blog", "nav-about": "Acerca de", "h1": "Acerca de este sitio", "p1": "Este sitio ofrece un convertidor gratuito de horas decimales y un estimador de nómina, pensado para un uso rápido sin necesidad de configurar una hoja de cálculo compleja.", "h2-1": "Por qué existe este sitio", "p2": "La conversión de minutos a centésimas es una fuente recurrente de errores en la gestión de nóminas. El objetivo aquí es hacer fiable ese cálculo en un clic, de forma gratuita.", "card": "Los resultados de nómina y conversión de horas se proporcionan a modo de estimación. Verifica siempre con tu departamento de nóminas o un profesional cualificado para un uso oficial.", "h2-2": "Contáctanos", "contact": "Para cualquier pregunta: ", "_title": "Acerca de | HoraDecimal.pro", "_desc": "Más información sobre HoraDecimal.pro, herramienta gratuita de conversión de horas decimales y estimación de nómina."}, "pt": {"nav-home": "Início", "nav-tools": "Ferramentas Grátis", "nav-tool1": "Conversor de Horas Decimais", "nav-tool2": "Horas Extras", "nav-tool3": "Folha de Ponto", "nav-guides": "Guias", "nav-blog": "Blog", "nav-about": "Sobre", "h1": "Sobre este site", "p1": "Este site oferece um conversor gratuito de horas decimais e um estimador de folha de pagamento, pensado para um uso rápido sem planilhas complexas para configurar.", "h2-1": "Por que este site existe", "p2": "A conversão de minutos para centésimos é uma fonte recorrente de erros na gestão de folha de pagamento. O objetivo aqui é tornar esse cálculo confiável em um clique, gratuitamente.", "card": "Os resultados de folha de pagamento e conversão de horas são fornecidos como estimativa. Sempre valide com seu departamento de RH ou um profissional qualificado para uso oficial.", "h2-2": "Fale conosco", "contact": "Para qualquer dúvida: ", "_title": "Sobre | HoraDecimal.pro", "_desc": "Saiba mais sobre o HoraDecimal.pro, ferramenta gratuita de conversão de horas decimais e estimativa de folha de pagamento."}, "hi": {"nav-home": "होम", "nav-tools": "मुफ़्त टूल्स", "nav-tool1": "दशमलव घंटा परिवर्तक", "nav-tool2": "ओवरटाइम कैलकुलेटर", "nav-tool3": "टाइमशीट", "nav-guides": "गाइड", "nav-blog": "ब्लॉग", "nav-about": "हमारे बारे में", "h1": "इस साइट के बारे में", "p1": "यह साइट एक मुफ़्त दशमलव-घंटा परिवर्तक और वेतन अनुमानक प्रदान करती है, जिसे बिना किसी जटिल स्प्रेडशीट सेटअप के त्वरित उपयोग के लिए डिज़ाइन किया गया है।", "h2-1": "यह साइट क्यों मौजूद है", "p2": "मिनट-से-सौवें रूपांतरण वेतन प्रबंधन में त्रुटि का एक आवर्ती स्रोत है। यहां लक्ष्य इस गणना को एक क्लिक में, मुफ़्त में, विश्वसनीय बनाना है।", "card": "वेतन और घंटा रूपांतरण के परिणाम केवल अनुमान के रूप में दिए जाते हैं। आधिकारिक उपयोग के लिए हमेशा अपने वेतन विभाग या किसी योग्य पेशेवर से पुष्टि करें।", "h2-2": "हमसे संपर्क करें", "contact": "किसी भी प्रश्न के लिए: ", "_title": "हमारे बारे में | HoraDecimal.pro", "_desc": "HoraDecimal.pro के बारे में अधिक जानें, जो दशमलव घंटा रूपांतरण और वेतन अनुमान के लिए एक मुफ़्त उपकरण है।"}, "ar": {"nav-home": "الرئيسية", "nav-tools": "أدوات مجانية", "nav-tool1": "محول الساعات العشرية", "nav-tool2": "حاسبة الساعات الإضافية", "nav-tool3": "كشف الدوام", "nav-guides": "أدلة", "nav-blog": "المدونة", "nav-about": "من نحن", "h1": "حول هذا الموقع", "p1": "يقدّم هذا الموقع محولًا مجانيًا للساعات العشرية وأداة لتقدير الراتب، مصممة للاستخدام السريع دون الحاجة لإعداد جدول بيانات معقد.", "h2-1": "لماذا يوجد هذا الموقع", "p2": "تحويل الدقائق إلى أجزاء عشرية مصدر متكرر للأخطاء في إدارة الرواتب. الهدف هنا هو جعل هذا الحساب موثوقًا بنقرة واحدة، مجانًا.", "card": "نتائج الرواتب وتحويل الساعات مُقدّمة على سبيل التقدير. تحقق دائمًا مع قسم الرواتب أو مختص مؤهل للاستخدام الرسمي.", "h2-2": "تواصل معنا", "contact": "لأي سؤال: ", "_title": "من نحن | HoraDecimal.pro", "_desc": "تعرف على المزيد حول HoraDecimal.pro، أداة مجانية لتحويل الساعات العشرية وتقدير الرواتب."}};</script>
+<script src="/i18n.js"></script>
 </body>
 </html>
