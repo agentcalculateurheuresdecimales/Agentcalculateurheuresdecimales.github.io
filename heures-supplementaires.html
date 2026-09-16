@@ -9,126 +9,88 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebApplication","name":"Calculateur d'Heures Supplémentaires","applicationCategory":"BusinessApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"}}
-</script>
 <style>
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  :root {
-    --ink: #1c2b22; --ink-soft: #5b6b62; --ink-mute: #8a978d;
-    --paper: #ffffff; --card: #fdeaea; --card-border: #f0caca;
-    --accent: #b02c2c; --accent-dark: #951f1f;
-    --line: #e2e5e9;
-  }
-  body { font-family: 'Space Grotesk', system-ui, sans-serif; background: var(--paper); color: var(--ink); line-height: 1.65; }
-  .wrap { max-width: 880px; margin: 0 auto; padding: 0 20px; }
-  header { background: #fff; border-bottom: 1px solid var(--line); padding: 16px 0; }
-  .header-row { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
-  .logo { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 1.05rem; text-decoration: none; color: var(--ink); }
-  .logo-icon { width: 36px; height: 36px; border-radius: 10px; background: var(--accent); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; }
-  nav.main-nav { display: flex; gap: 16px; flex-wrap: wrap; }
-  nav.main-nav a { color: var(--ink-soft); text-decoration: none; font-size: 0.85rem; font-weight: 600; }
-  nav.main-nav a:hover, nav.main-nav a.active { color: var(--accent); }
-  .nav-dropdown { position: relative; }
-  .dropdown-trigger { display: flex; align-items: center; gap: 4px; cursor: pointer; }
-  .dropdown-panel { display: none; position: absolute; top: 100%; left: 0; background: #fff; border: 1px solid var(--line); border-radius: 10px; padding: 6px; min-width: 220px; box-shadow: 0 10px 28px rgba(0,0,0,0.10); z-index: 30; margin-top: 0; }
-  .nav-dropdown:hover .dropdown-panel, .dropdown-panel.open { display: block; }
-  .dropdown-panel a { display: flex; align-items: center; gap: 8px; padding: 8px 10px; color: var(--ink); text-decoration: none; font-size: 0.85rem; border-radius: 6px; font-weight: 500; }
-  .dropdown-panel a:hover { background: var(--card); }
-  .hero { text-align: center; padding: 40px 0 10px; }
-  h1 { font-size: 1.9rem; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 10px; }
-  .lede { color: var(--ink-soft); font-size: 1rem; max-width: 500px; margin: 0 auto; }
-  .tool-zone { padding: 30px 0; max-width: 460px; margin: 0 auto; }
-  .row { display: flex; flex-direction: column; gap: 6px; margin-bottom: 16px; }
-  .row label { font-size: 0.82rem; color: var(--ink-soft); font-weight: 600; }
-  input { padding: 12px 14px; border: 1px solid var(--card-border); border-radius: 10px; font-family: inherit; font-size: 1rem; }
-  .btn { background: var(--accent); color: #fff; border: none; border-radius: 12px; padding: 14px 30px; font-weight: 700; font-size: 1rem; cursor: pointer; margin-top: 8px; width: 100%; }
-  .btn:hover { background: var(--accent-dark); }
-  .result-box { margin-top: 20px; background: var(--card); border: 1px solid var(--card-border); border-radius: 14px; padding: 20px; }
-  .result-box .line { display: flex; justify-content: space-between; font-size: 0.92rem; margin-bottom: 6px; }
-  .result-box .total { font-weight: 800; font-size: 1.2rem; color: var(--accent-dark); border-top: 1px solid var(--card-border); padding-top: 10px; margin-top: 8px; }
-  .ad-slot { background: #f3f4f6; border: 1px dashed #d1d5db; border-radius: 10px; text-align: center; padding: 14px; font-size: 0.7rem; color: var(--ink-mute); letter-spacing: 0.05em; text-transform: uppercase; margin: 26px 0; }
-  .faq { margin: 44px 0; }
-  .faq h2 { font-size: 1.35rem; margin-bottom: 16px; }
-  .faq-item { border-bottom: 1px solid var(--line); padding: 14px 0; }
-  .faq-item h3 { font-size: 0.98rem; margin-bottom: 6px; }
-  .faq-item p { color: var(--ink-soft); font-size: 0.9rem; }
-  footer { background: #fff; border-top: 1px solid var(--line); padding: 28px 0; margin-top: 40px; font-size: 0.82rem; color: var(--ink-mute); text-align: center; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --ink: #1c2b22; --ink-soft: #5b6b62; --ink-mute: #8a978d;
+  --paper: #ffffff; --card: #fdeaea; --card-border: #f0caca;
+  --accent: #b02c2c; --accent-dark: #951f1f;
+  --line: #e2e5e9;
+}
+body { font-family: 'Space Grotesk', system-ui, sans-serif; background: var(--paper); color: var(--ink); line-height: 1.65; }
+.wrap { max-width: 880px; margin: 0 auto; padding: 0 20px; }
+header { background: #fff; border-bottom: 1px solid var(--line); padding: 16px 0; }
+.header-row { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+.logo { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 1.05rem; text-decoration: none; color: var(--ink); }
+.logo-icon { width: 36px; height: 36px; border-radius: 10px; background: var(--accent); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; }
+nav.main-nav { display: flex; gap: 16px; flex-wrap: wrap; align-items:center; }
+nav.main-nav a { color: var(--ink-soft); text-decoration: none; font-size: 0.85rem; font-weight: 600; }
+nav.main-nav a:hover, nav.main-nav a.active { color: var(--accent); }
+.nav-dropdown { position: relative; }
+.dropdown-trigger { display: flex; align-items: center; gap: 4px; cursor: pointer; }
+.dropdown-panel { display: none; position: absolute; top: 100%; left: 0; background: #fff; border: 1px solid var(--line); border-radius: 10px; padding: 6px; min-width: 220px; box-shadow: 0 10px 28px rgba(0,0,0,0.10); z-index: 30; margin-top: 0; }
+.nav-dropdown:hover .dropdown-panel, .dropdown-panel.open { display: block; }
+.dropdown-panel a { display: flex; align-items: center; gap: 8px; padding: 8px 10px; color: var(--ink); text-decoration: none; font-size: 0.85rem; border-radius: 6px; font-weight: 500; }
+.dropdown-panel a:hover { background: var(--card); }
+.hero { text-align: center; padding: 40px 0 10px; }
+h1 { font-size: 1.9rem; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 10px; }
+.lede { color: var(--ink-soft); font-size: 1rem; max-width: 520px; margin: 0 auto; }
+.tool-zone { padding: 30px 0; max-width: 480px; margin: 0 auto; }
+.row { display: flex; flex-direction: column; gap: 6px; margin-bottom: 16px; }
+.row label { font-size: 0.82rem; color: var(--ink-soft); font-weight: 600; }
+input, table { width: 100%; }
+input[type=number] { padding: 12px 14px; border: 1px solid var(--card-border); border-radius: 10px; font-family: inherit; font-size: 1rem; }
+table { border-collapse: collapse; }
+th, td { padding: 8px 6px; text-align: left; font-size: 0.85rem; }
+th { color: var(--ink-mute); font-weight: 600; border-bottom: 1px solid var(--line); }
+[dir="rtl"] th, [dir="rtl"] td { text-align: right; }
+.btn { background: var(--accent); color: #fff; border: none; border-radius: 12px; padding: 14px 30px; font-weight: 700; font-size: 1rem; cursor: pointer; margin-top: 8px; width: 100%; }
+.btn:hover { background: var(--accent-dark); }
+.result-box { margin-top: 20px; background: var(--card); border: 1px solid var(--card-border); border-radius: 14px; padding: 20px; }
+.result-box .line { display: flex; justify-content: space-between; font-size: 0.92rem; margin-bottom: 6px; }
+.result-box .total { font-weight: 800; font-size: 1.2rem; color: var(--accent-dark); border-top: 1px solid var(--card-border); padding-top: 10px; margin-top: 8px; }
+.ad-slot { background: #f3f4f6; border: 1px dashed #d1d5db; border-radius: 10px; text-align: center; padding: 14px; font-size: 0.7rem; color: var(--ink-mute); letter-spacing: 0.05em; text-transform: uppercase; margin: 26px 0; }
+.faq { margin: 44px 0; }
+.faq h2 { font-size: 1.35rem; margin-bottom: 16px; }
+.faq-item { border-bottom: 1px solid var(--line); padding: 14px 0; }
+.faq-item h3 { font-size: 0.98rem; margin-bottom: 6px; }
+.faq-item p { color: var(--ink-soft); font-size: 0.9rem; }
+footer { background: #fff; border-top: 1px solid var(--line); padding: 28px 0; margin-top: 40px; font-size: 0.82rem; color: var(--ink-mute); text-align: center; }
+[dir="rtl"] main { text-align: right; }
+[dir="rtl"] .dropdown-panel { left: auto; right: 0; }
+
 </style>
 </head>
 <body>
 <header>
   <div class="wrap header-row">
     <a class="logo" href="/"><span class="logo-icon">H</span> HoraDecimal.pro</a>
-    <nav class="main-nav">
-      <a href="/">Home</a>
-      <div class="nav-dropdown">
-        <span class="dropdown-trigger" onclick="var p=this.nextElementSibling;p.classList.toggle('open')">
-          <a href="/tools.html" style="color:inherit;text-decoration:none;">Free Tools</a> <span style="font-size:0.7em;">&#9662;</span>
-        </span>
-        <div class="dropdown-panel">
-          <a href="/">Convertisseur Heures Décimales</a>
-          <a href="/heures-supplementaires.html">Heures Supplémentaires</a>
-          <a href="/feuille-de-temps.html">Feuille de Temps</a>
-        </div>
-      </div>
-      <a href="/guides.html">Guides</a>
-      <a href="/blog.html">Blog</a>
-      <a href="/about.html">About</a>
-    </nav>
+    <nav class="main-nav"><a href="/" data-i18n="nav-home">Home</a><div class="nav-dropdown"><span class="dropdown-trigger" onclick="var p=this.nextElementSibling;p.classList.toggle('open')"><a href="/tools.html" style="color:inherit;text-decoration:none;" data-i18n="nav-tools">Outils Gratuits</a> <span style="font-size:0.7em;">&#9662;</span></span><div class="dropdown-panel"><a href="/" data-i18n="nav-tool1">Convertisseur Heures Décimales</a><a href="/heures-supplementaires.html" data-i18n="nav-tool2">Heures Supplémentaires</a><a href="/feuille-de-temps.html" data-i18n="nav-tool3">Feuille de Temps</a></div></div><a href="/guides.html" data-i18n="nav-guides">Guides</a><a href="/blog.html" data-i18n="nav-blog">Blog</a><a href="/about.html" data-i18n="nav-about">À propos</a><div class="nav-dropdown"><span class="dropdown-trigger" onclick="var p=this.nextElementSibling;p.classList.toggle('open')"><span id="lang-current">FR</span> <span style="font-size:0.7em;">&#9662;</span></span><div class="dropdown-panel lang-panel"><a href="#" data-lang="fr" onclick="setLanguage('fr');return false;">Français</a><a href="#" data-lang="en" onclick="setLanguage('en');return false;">English</a><a href="#" data-lang="es" onclick="setLanguage('es');return false;">Español</a><a href="#" data-lang="pt" onclick="setLanguage('pt');return false;">Português</a><a href="#" data-lang="hi" onclick="setLanguage('hi');return false;">हिन्दी</a><a href="#" data-lang="ar" onclick="setLanguage('ar');return false;">العربية</a></div></div></nav>
   </div>
 </header>
-
 <main class="wrap">
-  <div class="hero">
-    <h1>Calculateur d'Heures Supplémentaires</h1>
-    <p class="lede">Calcule la majoration due sur tes heures supplémentaires selon le taux applicable.</p>
+<div class="hero">
+  <h1 data-i18n="h1">Calculateur d'Heures Supplémentaires</h1>
+  <p class="lede" data-i18n="lede">Calcule la majoration due sur tes heures supplémentaires selon le taux applicable.</p>
+</div>
+<div class="tool-zone">
+  <div class="row"><label data-i18n="label-rate">Taux horaire brut (€)</label><input type="number" id="rate" value="15" step="0.01"></div>
+  <div class="row"><label data-i18n="label-hours">Heures supplémentaires effectuées</label><input type="number" id="hours" value="5" step="0.25"></div>
+  <div class="row"><label data-i18n="label-premium">Taux de majoration (%)</label><input type="number" id="premium" value="25" step="1"></div>
+  <button class="btn" data-i18n="btn" onclick="calc()">Calculer</button>
+  <div class="result-box" id="result" style="display:none;">
+    <div class="line"><span data-i18n="r-rate-label">Taux majoré</span><span id="r-rate">—</span></div>
+    <div class="line"><span data-i18n="r-hours-label">Total heures sup.</span><span id="r-hours">—</span></div>
+    <div class="line total"><span data-i18n="r-total-label">Montant dû</span><span id="r-total">—</span></div>
   </div>
-
-  <div class="tool-zone">
-    <div class="row">
-      <label>Taux horaire brut (€)</label>
-      <input type="number" id="rate" value="15" step="0.01">
-    </div>
-    <div class="row">
-      <label>Heures supplémentaires effectuées</label>
-      <input type="number" id="hours" value="5" step="0.25">
-    </div>
-    <div class="row">
-      <label>Taux de majoration (%)</label>
-      <input type="number" id="premium" value="25" step="1">
-    </div>
-    <button class="btn" onclick="calc()">Calculer</button>
-    <div class="result-box" id="result" style="display:none;">
-      <div class="line"><span>Taux majoré</span><span id="r-rate">—</span></div>
-      <div class="line"><span>Total heures sup.</span><span id="r-hours">—</span></div>
-      <div class="line total"><span>Montant dû</span><span id="r-total">—</span></div>
-    </div>
-  </div>
-
-  <div class="ad-slot">Publicité / Advertisement — AdSense</div>
-
-  <section class="faq">
-    <h2>Questions fréquentes</h2>
-    <div class="faq-item">
-      <h3>Quel est le taux de majoration légal en France ?</h3>
-      <p>En l'absence d'accord d'entreprise, le Code du travail prévoit 25% pour les 8 premières heures supplémentaires par semaine, puis 50% au-delà. Cet outil te laisse saisir le taux applicable à ta situation.</p>
-    </div>
-    <div class="faq-item">
-      <h3>Ce résultat est-il exact pour ma fiche de paie ?</h3>
-      <p>C'est une estimation. Le calcul réel dépend aussi des cotisations sociales et de ta convention collective — vérifie toujours avec ton service de paie.</p>
-    </div>
-    <div class="faq-item">
-      <h3>Est-ce gratuit et sans inscription ?</h3>
-      <p>Oui, entièrement gratuit, aucun compte à créer, tout se passe dans votre navigateur.</p>
-    </div>
-  </section>
-</main>
-
-<footer>
-  <div class="wrap">© HoraDecimal.pro</div>
-</footer>
-
+</div>
+<div class="ad-slot">Publicité / Advertisement — AdSense</div>
+<section class="faq">
+  <h2 data-i18n="faq-h2">Questions fréquentes</h2>
+  <div class="faq-item"><h3 data-i18n="faq1-q">Quel est le taux de majoration légal en France&nbsp;?</h3><p data-i18n="faq1-a">En l'absence d'accord d'entreprise, le Code du travail prévoit 25% pour les 8 premières heures supplémentaires par semaine, puis 50% au-delà. Cet outil te laisse saisir le taux applicable à ta situation.</p></div>
+  <div class="faq-item"><h3 data-i18n="faq2-q">Ce résultat est-il exact pour ma fiche de paie&nbsp;?</h3><p data-i18n="faq2-a">C'est une estimation. Le calcul réel dépend aussi des cotisations sociales et de ta convention collective — vérifie toujours avec ton service de paie.</p></div>
+  <div class="faq-item"><h3 data-i18n="faq3-q">Est-ce gratuit et sans inscription&nbsp;?</h3><p data-i18n="faq3-a">Oui, entièrement gratuit, aucun compte à créer, tout se passe dans votre navigateur.</p></div>
+</section>
 <script>
 function calc() {
   const rate = parseFloat(document.getElementById('rate').value) || 0;
@@ -142,5 +104,11 @@ function calc() {
   document.getElementById('result').style.display = 'block';
 }
 </script>
+</main>
+<footer>
+  <div class="wrap">&copy; HoraDecimal.pro</div>
+</footer>
+<script>window.translations = {"fr": {"nav-home": "Home", "nav-tools": "Outils Gratuits", "nav-tool1": "Convertisseur Heures Décimales", "nav-tool2": "Heures Supplémentaires", "nav-tool3": "Feuille de Temps", "nav-guides": "Guides", "nav-blog": "Blog", "nav-about": "À propos", "h1": "Calculateur d'Heures Supplémentaires", "lede": "Calcule la majoration due sur tes heures supplémentaires selon le taux applicable.", "label-rate": "Taux horaire brut (€)", "label-hours": "Heures supplémentaires effectuées", "label-premium": "Taux de majoration (%)", "btn": "Calculer", "r-rate-label": "Taux majoré", "r-hours-label": "Total heures sup.", "r-total-label": "Montant dû", "faq-h2": "Questions fréquentes", "faq1-q": "Quel est le taux de majoration légal en France ?", "faq1-a": "En l'absence d'accord d'entreprise, le Code du travail prévoit 25% pour les 8 premières heures supplémentaires par semaine, puis 50% au-delà. Cet outil te laisse saisir le taux applicable à ta situation.", "faq2-q": "Ce résultat est-il exact pour ma fiche de paie ?", "faq2-a": "C'est une estimation. Le calcul réel dépend aussi des cotisations sociales et de ta convention collective — vérifie toujours avec ton service de paie.", "faq3-q": "Est-ce gratuit et sans inscription ?", "faq3-a": "Oui, entièrement gratuit, aucun compte à créer, tout se passe dans votre navigateur.", "_title": "Calculateur d'Heures Supplémentaires Gratuit | HoraDecimal.pro", "_desc": "Calcule ta majoration d'heures supplémentaires (25%, 50%) à partir de tes heures travaillées et de ton taux horaire."}, "en": {"nav-home": "Home", "nav-tools": "Free Tools", "nav-tool1": "Decimal Hours Converter", "nav-tool2": "Overtime Calculator", "nav-tool3": "Timesheet", "nav-guides": "Guides", "nav-blog": "Blog", "nav-about": "About", "h1": "Overtime Calculator", "lede": "Calculates the premium owed on your overtime hours at the applicable rate.", "label-rate": "Gross hourly rate (€)", "label-hours": "Overtime hours worked", "label-premium": "Premium rate (%)", "btn": "Calculate", "r-rate-label": "Premium rate", "r-hours-label": "Total overtime", "r-total-label": "Amount due", "faq-h2": "Frequently asked questions", "faq1-q": "What is the legal overtime premium rate in France?", "faq1-a": "Absent a company agreement, French labor law sets 25% for the first 8 overtime hours per week, then 50% beyond that. This tool lets you enter the rate that applies to your situation.", "faq2-q": "Is this result exact for my payslip?", "faq2-a": "It's an estimate. The actual calculation also depends on social contributions and your collective agreement — always check with your payroll department.", "faq3-q": "Is it free and without sign-up?", "faq3-a": "Yes, completely free, no account needed, everything runs in your browser.", "_title": "Free Overtime Calculator | HoraDecimal.pro", "_desc": "Calculate your overtime premium (25%, 50%) from your hours worked and hourly rate."}, "es": {"nav-home": "Inicio", "nav-tools": "Herramientas Gratis", "nav-tool1": "Convertidor de Horas Decimales", "nav-tool2": "Horas Extras", "nav-tool3": "Hoja de Horas", "nav-guides": "Guías", "nav-blog": "Blog", "nav-about": "Acerca de", "h1": "Calculadora de Horas Extras", "lede": "Calcula el recargo adeudado por tus horas extras según la tasa aplicable.", "label-rate": "Tarifa horaria bruta (€)", "label-hours": "Horas extras realizadas", "label-premium": "Porcentaje de recargo (%)", "btn": "Calcular", "r-rate-label": "Tarifa con recargo", "r-hours-label": "Total horas extras", "r-total-label": "Importe adeudado", "faq-h2": "Preguntas frecuentes", "faq1-q": "¿Cuál es el recargo legal por horas extras en Francia?", "faq1-a": "A falta de un acuerdo de empresa, el Código de Trabajo francés establece un 25% para las primeras 8 horas extras semanales, y un 50% a partir de ahí. Esta herramienta te permite introducir la tasa aplicable a tu situación.", "faq2-q": "¿Es este resultado exacto para mi nómina?", "faq2-a": "Es una estimación. El cálculo real también depende de las cotizaciones sociales y de tu convenio colectivo — verifica siempre con tu departamento de nóminas.", "faq3-q": "¿Es gratis y sin registro?", "faq3-a": "Sí, completamente gratis, sin necesidad de crear una cuenta, todo ocurre en tu navegador.", "_title": "Calculadora Gratuita de Horas Extras | HoraDecimal.pro", "_desc": "Calcula tu recargo por horas extras (25%, 50%) a partir de tus horas trabajadas y tu tarifa horaria."}, "pt": {"nav-home": "Início", "nav-tools": "Ferramentas Grátis", "nav-tool1": "Conversor de Horas Decimais", "nav-tool2": "Horas Extras", "nav-tool3": "Folha de Ponto", "nav-guides": "Guias", "nav-blog": "Blog", "nav-about": "Sobre", "h1": "Calculadora de Horas Extras", "lede": "Calcula o adicional devido pelas suas horas extras conforme a taxa aplicável.", "label-rate": "Taxa horária bruta (€)", "label-hours": "Horas extras realizadas", "label-premium": "Taxa de adicional (%)", "btn": "Calcular", "r-rate-label": "Taxa com adicional", "r-hours-label": "Total horas extras", "r-total-label": "Valor devido", "faq-h2": "Perguntas frequentes", "faq1-q": "Qual é a taxa legal de adicional de horas extras na França?", "faq1-a": "Na ausência de um acordo coletivo, a legislação trabalhista francesa prevê 25% para as primeiras 8 horas extras semanais, e 50% além disso. Esta ferramenta permite inserir a taxa aplicável à sua situação.", "faq2-q": "Esse resultado é exato para o meu contracheque?", "faq2-a": "É uma estimativa. O cálculo real também depende das contribuições sociais e da sua convenção coletiva — sempre confirme com seu departamento de RH.", "faq3-q": "É gratuito e sem cadastro?", "faq3-a": "Sim, totalmente gratuito, sem necessidade de criar conta, tudo acontece no seu navegador.", "_title": "Calculadora Gratuita de Horas Extras | HoraDecimal.pro", "_desc": "Calcule seu adicional de horas extras (25%, 50%) a partir das horas trabalhadas e da taxa horária."}, "hi": {"nav-home": "होम", "nav-tools": "मुफ़्त टूल्स", "nav-tool1": "दशमलव घंटा परिवर्तक", "nav-tool2": "ओवरटाइम कैलकुलेटर", "nav-tool3": "टाइमशीट", "nav-guides": "गाइड", "nav-blog": "ब्लॉग", "nav-about": "हमारे बारे में", "h1": "ओवरटाइम कैलकुलेटर", "lede": "लागू दर के अनुसार आपके ओवरटाइम घंटों पर देय अतिरिक्त राशि की गणना करता है।", "label-rate": "सकल प्रति घंटा दर (€)", "label-hours": "किए गए ओवरटाइम घंटे", "label-premium": "अतिरिक्त दर (%)", "btn": "गणना करें", "r-rate-label": "बढ़ी हुई दर", "r-hours-label": "कुल ओवरटाइम घंटे", "r-total-label": "देय राशि", "faq-h2": "अक्सर पूछे जाने वाले प्रश्न", "faq1-q": "फ्रांस में कानूनी ओवरटाइम अतिरिक्त दर क्या है?", "faq1-a": "कंपनी समझौते के अभाव में, फ्रांसीसी श्रम कानून साप्ताहिक पहले 8 ओवरटाइम घंटों के लिए 25% और उसके बाद 50% निर्धारित करता है। यह उपकरण आपको अपनी स्थिति पर लागू दर दर्ज करने देता है।", "faq2-q": "क्या यह परिणाम मेरी वेतन पर्ची के लिए सटीक है?", "faq2-a": "यह एक अनुमान है। वास्तविक गणना सामाजिक अंशदान और आपके सामूहिक समझौते पर भी निर्भर करती है — हमेशा अपने वेतन विभाग से जांच करें।", "faq3-q": "क्या यह मुफ़्त और बिना पंजीकरण के है?", "faq3-a": "हां, पूरी तरह मुफ़्त, किसी खाते की आवश्यकता नहीं, सब कुछ आपके ब्राउज़र में होता है।", "_title": "मुफ़्त ओवरटाइम कैलकुलेटर | HoraDecimal.pro", "_desc": "अपने काम किए गए घंटों और प्रति घंटा दर से अपनी ओवरटाइम अतिरिक्त राशि (25%, 50%) की गणना करें।"}, "ar": {"nav-home": "الرئيسية", "nav-tools": "أدوات مجانية", "nav-tool1": "محول الساعات العشرية", "nav-tool2": "حاسبة الساعات الإضافية", "nav-tool3": "كشف الدوام", "nav-guides": "أدلة", "nav-blog": "المدونة", "nav-about": "من نحن", "h1": "حاسبة الساعات الإضافية", "lede": "تحسب العلاوة المستحقة عن ساعات عملك الإضافية وفق النسبة المطبقة.", "label-rate": "الأجر الإجمالي بالساعة (€)", "label-hours": "الساعات الإضافية المنجزة", "label-premium": "نسبة العلاوة (%)", "btn": "احسب", "r-rate-label": "الأجر بعد العلاوة", "r-hours-label": "إجمالي الساعات الإضافية", "r-total-label": "المبلغ المستحق", "faq-h2": "الأسئلة الشائعة", "faq1-q": "ما هي نسبة علاوة الساعات الإضافية القانونية في فرنسا؟", "faq1-a": "في غياب اتفاقية شركة، ينص قانون العمل الفرنسي على 25% لأول 8 ساعات إضافية أسبوعياً، ثم 50% بعد ذلك. تتيح لك هذه الأداة إدخال النسبة المطبقة على حالتك.", "faq2-q": "هل هذه النتيجة دقيقة لكشف راتبي؟", "faq2-a": "هذا تقدير. يعتمد الحساب الفعلي أيضًا على الاشتراكات الاجتماعية واتفاقيتك الجماعية — تحقق دائمًا مع قسم الرواتب لديك.", "faq3-q": "هل هي مجانية ودون تسجيل؟", "faq3-a": "نعم، مجانية بالكامل، لا حاجة لإنشاء حساب، كل شيء يتم داخل متصفحك.", "_title": "حاسبة الساعات الإضافية المجانية | HoraDecimal.pro", "_desc": "احسب علاوة ساعاتك الإضافية (25%، 50%) بناءً على ساعات عملك وأجرك بالساعة."}};</script>
+<script src="/i18n.js"></script>
 </body>
 </html>
