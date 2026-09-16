@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Heures Décimales vs Sexagésimales : Guide Complet</title>
-<meta name="description" content="Pourquoi la paie utilise les centièmes d'heures plutôt que les minutes, et comment convertir correctement.">
+<title>Guide : Heures Décimales vs Sexagésimales | HoraDecimal.pro</title>
+<meta name="description" content="Comprendre la différence entre heures décimales et sexagésimales, et éviter l'erreur de conversion la plus fréquente en paie.">
 <link rel="canonical" href="https://axolscozytimer-cmyk.github.io/guides.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,12 +18,12 @@
   --line: #e2e5e9;
 }
 body { font-family: 'Space Grotesk', system-ui, sans-serif; background: var(--paper); color: var(--ink); line-height: 1.65; }
-.wrap { max-width: 760px; margin: 0 auto; padding: 0 20px; }
+.wrap { max-width: 780px; margin: 0 auto; padding: 0 20px; }
 header { background: #fff; border-bottom: 1px solid var(--line); padding: 16px 0; }
 .header-row { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
 .logo { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 1.05rem; text-decoration: none; color: var(--ink); }
 .logo-icon { width: 36px; height: 36px; border-radius: 10px; background: var(--accent); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; }
-nav.main-nav { display: flex; gap: 16px; flex-wrap: wrap; }
+nav.main-nav { display: flex; gap: 16px; flex-wrap: wrap; align-items:center; }
 nav.main-nav a { color: var(--ink-soft); text-decoration: none; font-size: 0.85rem; font-weight: 600; }
 nav.main-nav a:hover, nav.main-nav a.active { color: var(--accent); }
 main { padding: 40px 0 60px; }
@@ -36,48 +36,44 @@ p { color: var(--ink-soft); font-size: 0.96rem; margin-bottom: 12px; }
 .tool-card { background: var(--card); border: 1px solid var(--card-border); border-radius: 12px; padding: 20px; text-decoration: none; color: var(--ink); display: block; }
 .tool-card h2 { margin: 0 0 6px; font-size: 1.05rem; }
 .tool-card p { font-size: 0.85rem; margin: 0; }
-.soon { opacity: 0.5; }
 .ad-slot { background: #f3f4f6; border: 1px dashed #d1d5db; border-radius: 10px; text-align: center; padding: 14px; font-size: 0.7rem; color: var(--ink-mute); letter-spacing: 0.05em; text-transform: uppercase; margin: 26px 0; }
 .card { background: var(--card); border: 1px solid var(--card-border); border-radius: 12px; padding: 18px 20px; margin: 20px 0; }
 .card p { color: var(--ink); font-size: 0.92rem; margin-bottom: 0; }
 a.cta { display: inline-block; background: var(--accent); color: #fff; text-decoration: none; border-radius: 10px; padding: 12px 24px; font-weight: 700; font-size: 0.95rem; margin-top: 10px; }
 footer { background: #fff; border-top: 1px solid var(--line); padding: 28px 0; margin-top: 40px; font-size: 0.82rem; color: var(--ink-mute); text-align: center; }
-
-  .nav-dropdown { position: relative; }
-  .dropdown-trigger { display: flex; align-items: center; gap: 4px; cursor: pointer; }
-  .dropdown-panel { display: none; position: absolute; top: 100%; left: 0; background: #fff; border: 1px solid var(--line); border-radius: 10px; padding: 6px; min-width: 200px; box-shadow: 0 10px 28px rgba(0,0,0,0.10); z-index: 30; margin-top: 0; }
-  .nav-dropdown:hover .dropdown-panel, .dropdown-panel.open { display: block; }
-  .dropdown-panel a { display: flex; align-items: center; gap: 8px; padding: 8px 10px; color: var(--ink); text-decoration: none; font-size: 0.85rem; border-radius: 6px; font-weight: 500; }
-  .dropdown-panel a:hover { background: var(--card); }
-  .dropdown-soon { padding: 8px 10px; color: var(--ink-mute); font-size: 0.78rem; font-style: italic; }
+.nav-dropdown { position: relative; }
+.dropdown-trigger { display: flex; align-items: center; gap: 4px; cursor: pointer; }
+.dropdown-panel { display: none; position: absolute; top: 100%; left: 0; background: #fff; border: 1px solid var(--line); border-radius: 10px; padding: 6px; min-width: 200px; box-shadow: 0 10px 28px rgba(0,0,0,0.10); z-index: 30; margin-top: 0; }
+.nav-dropdown:hover .dropdown-panel, .dropdown-panel.open { display: block; }
+.dropdown-panel a { display: flex; align-items: center; gap: 8px; padding: 8px 10px; color: var(--ink); text-decoration: none; font-size: 0.85rem; border-radius: 6px; font-weight: 500; }
+.dropdown-panel a:hover { background: var(--card); }
+[dir="rtl"] main { text-align: right; }
+[dir="rtl"] .dropdown-panel { left: auto; right: 0; }
 </style>
 </head>
 <body>
 <header>
   <div class="wrap header-row">
     <a class="logo" href="/"><span class="logo-icon">H</span> HoraDecimal.pro</a>
-    <nav class="main-nav"><a href="/">Home</a><div class="nav-dropdown"><span class="dropdown-trigger" onclick="var p=this.nextElementSibling;p.classList.toggle('open')"><a href="/tools.html" style="color:inherit;text-decoration:none;">Free Tools</a> <span style="font-size:0.7em;">▾</span></span><div class="dropdown-panel"><a href="/">Convertisseur Heures</a><a href="/heures-supplementaires.html">Heures Supplémentaires</a><a href="/feuille-de-temps.html">Feuille de Temps</a></div></div><a href="/guides.html" class="active">Guides</a><a href="/blog.html">Blog</a><a href="/about.html">About</a></nav>
+    <nav class="main-nav"><a href="/" data-i18n="nav-home">Home</a><div class="nav-dropdown"><span class="dropdown-trigger" onclick="var p=this.nextElementSibling;p.classList.toggle('open')"><a href="/tools.html" style="color:inherit;text-decoration:none;" data-i18n="nav-tools">Outils Gratuits</a> <span style="font-size:0.7em;">&#9662;</span></span><div class="dropdown-panel"><a href="/" data-i18n="nav-tool1">Convertisseur Heures Décimales</a><a href="/heures-supplementaires.html" data-i18n="nav-tool2">Heures Supplémentaires</a><a href="/feuille-de-temps.html" data-i18n="nav-tool3">Feuille de Temps</a></div></div><a href="/guides.html" data-i18n="nav-guides" class="active">Guides</a><a href="/blog.html" data-i18n="nav-blog">Blog</a><a href="/about.html" data-i18n="nav-about">À propos</a><div class="nav-dropdown"><span class="dropdown-trigger" onclick="var p=this.nextElementSibling;p.classList.toggle('open')"><span id="lang-current">FR</span> <span style="font-size:0.7em;">&#9662;</span></span><div class="dropdown-panel lang-panel"><a href="#" data-lang="fr" onclick="setLanguage('fr');return false;">Français</a><a href="#" data-lang="en" onclick="setLanguage('en');return false;">English</a><a href="#" data-lang="es" onclick="setLanguage('es');return false;">Español</a><a href="#" data-lang="pt" onclick="setLanguage('pt');return false;">Português</a><a href="#" data-lang="hi" onclick="setLanguage('hi');return false;">हिन्दी</a><a href="#" data-lang="ar" onclick="setLanguage('ar');return false;">العربية</a></div></div></nav>
   </div>
 </header>
 <main class="wrap">
-  <h1>Heures décimales vs sexagésimales&nbsp;: le guide</h1>
-  <p>Une heure ne se divise pas en 100 minutes mais en 60 — ce qui complique tout calcul de paie fait à la main.</p>
-
-  <h2>Pourquoi la paie utilise le format décimal</h2>
-  <p>Un bulletin de paie doit multiplier un nombre d'heures par un taux horaire. Faire ce calcul avec des minutes (base 60) introduit des erreurs d'arrondi fréquentes&nbsp;: la paie utilise donc systématiquement le format décimal (base 100), plus simple à multiplier.</p>
-
-  <h2>La conversion de base</h2>
-  <p>Pour convertir des minutes en centièmes d'heure&nbsp;: divisez le nombre de minutes par 60. Exemple&nbsp;: 30 minutes = 30/60 = 0,50 heure décimale.</p>
-
-  <div class="ad-slot">Publicité / Advertisement — AdSense</div>
-
-  <h2>L'erreur la plus fréquente</h2>
-  <p>Beaucoup confondent "1h45" avec "1,45 heure décimale" — c'est faux&nbsp;: 45 minutes valent 0,75 heure, donc 1h45 = 1,75 heure décimale, pas 1,45.</p>
-
-  <p><a class="cta" href="/">Utiliser le convertisseur</a></p>
+<h1 data-i18n="h1">Heures décimales vs sexagésimales&nbsp;: le guide</h1>
+<p data-i18n="intro">Une heure ne se divise pas en 100 minutes mais en 60 — ce qui complique tout calcul de paie fait à la main.</p>
+<h2 data-i18n="h2-1">Pourquoi la paie utilise le format décimal</h2>
+<p data-i18n="p1">Un bulletin de paie doit multiplier un nombre d'heures par un taux horaire. Faire ce calcul avec des minutes (base 60) introduit des erreurs d'arrondi fréquentes&nbsp;: la paie utilise donc systématiquement le format décimal (base 100), plus simple à multiplier.</p>
+<h2 data-i18n="h2-2">La conversion de base</h2>
+<p data-i18n="p2">Pour convertir des minutes en centièmes d'heure&nbsp;: divisez le nombre de minutes par 60. Exemple&nbsp;: 30 minutes = 30/60 = 0,50 heure décimale.</p>
+<div class="ad-slot">Publicité / Advertisement — AdSense</div>
+<h2 data-i18n="h2-3">L'erreur la plus fréquente</h2>
+<p data-i18n="p3">Beaucoup confondent "1h45" avec "1,45 heure décimale" — c'est faux&nbsp;: 45 minutes valent 0,75 heure, donc 1h45 = 1,75 heure décimale, pas 1,45.</p>
+<p><a class="cta" href="/" data-i18n="cta">Utiliser le convertisseur</a></p>
 </main>
 <footer>
-  <div class="wrap">© HoraDecimal.pro</div>
+  <div class="wrap">&copy; HoraDecimal.pro</div>
 </footer>
+<script>window.translations = {"fr": {"nav-home": "Home", "nav-tools": "Outils Gratuits", "nav-tool1": "Convertisseur Heures Décimales", "nav-tool2": "Heures Supplémentaires", "nav-tool3": "Feuille de Temps", "nav-guides": "Guides", "nav-blog": "Blog", "nav-about": "À propos", "h1": "Heures décimales vs sexagésimales : le guide", "intro": "Une heure ne se divise pas en 100 minutes mais en 60 — ce qui complique tout calcul de paie fait à la main.", "h2-1": "Pourquoi la paie utilise le format décimal", "p1": "Un bulletin de paie doit multiplier un nombre d'heures par un taux horaire. Faire ce calcul avec des minutes (base 60) introduit des erreurs d'arrondi fréquentes : la paie utilise donc systématiquement le format décimal (base 100), plus simple à multiplier.", "h2-2": "La conversion de base", "p2": "Pour convertir des minutes en centièmes d'heure : divisez le nombre de minutes par 60. Exemple : 30 minutes = 30/60 = 0,50 heure décimale.", "h2-3": "L'erreur la plus fréquente", "p3": "Beaucoup confondent \"1h45\" avec \"1,45 heure décimale\" — c'est faux : 45 minutes valent 0,75 heure, donc 1h45 = 1,75 heure décimale, pas 1,45.", "cta": "Utiliser le convertisseur", "_title": "Guide : Heures Décimales vs Sexagésimales | HoraDecimal.pro", "_desc": "Comprendre la différence entre heures décimales et sexagésimales, et éviter l'erreur de conversion la plus fréquente en paie."}, "en": {"nav-home": "Home", "nav-tools": "Free Tools", "nav-tool1": "Decimal Hours Converter", "nav-tool2": "Overtime Calculator", "nav-tool3": "Timesheet", "nav-guides": "Guides", "nav-blog": "Blog", "nav-about": "About", "h1": "Decimal vs. Sexagesimal Hours: The Guide", "intro": "An hour doesn't split into 100 minutes but into 60 — which complicates any payroll calculation done by hand.", "h2-1": "Why payroll uses the decimal format", "p1": "A payslip has to multiply a number of hours by an hourly rate. Doing this with minutes (base 60) introduces frequent rounding errors — so payroll systematically uses the decimal format (base 100), which is simpler to multiply.", "h2-2": "The basic conversion", "p2": "To convert minutes into hundredths of an hour: divide the number of minutes by 60. Example: 30 minutes = 30/60 = 0.50 decimal hours.", "h2-3": "The most common mistake", "p3": "Many people confuse \"1h45\" with \"1.45 decimal hours\" — that's wrong: 45 minutes equal 0.75 hours, so 1h45 = 1.75 decimal hours, not 1.45.", "cta": "Use the converter", "_title": "Guide: Decimal vs. Sexagesimal Hours | HoraDecimal.pro", "_desc": "Understand the difference between decimal and sexagesimal hours, and avoid the most common payroll conversion mistake."}, "es": {"nav-home": "Inicio", "nav-tools": "Herramientas Gratis", "nav-tool1": "Convertidor de Horas Decimales", "nav-tool2": "Horas Extras", "nav-tool3": "Hoja de Horas", "nav-guides": "Guías", "nav-blog": "Blog", "nav-about": "Acerca de", "h1": "Horas Decimales vs. Sexagesimales: la guía", "intro": "Una hora no se divide en 100 minutos sino en 60, lo que complica cualquier cálculo de nómina hecho a mano.", "h2-1": "Por qué la nómina usa el formato decimal", "p1": "Una nómina debe multiplicar un número de horas por una tarifa horaria. Hacer este cálculo con minutos (base 60) introduce errores de redondeo frecuentes: por eso la nómina usa sistemáticamente el formato decimal (base 100), más fácil de multiplicar.", "h2-2": "La conversión básica", "p2": "Para convertir minutos en centésimas de hora: divide el número de minutos entre 60. Ejemplo: 30 minutos = 30/60 = 0,50 horas decimales.", "h2-3": "El error más frecuente", "p3": "Muchos confunden \"1h45\" con \"1,45 horas decimales\" — es incorrecto: 45 minutos equivalen a 0,75 horas, así que 1h45 = 1,75 horas decimales, no 1,45.", "cta": "Usar el convertidor", "_title": "Guía: Horas Decimales vs. Sexagesimales | HoraDecimal.pro", "_desc": "Comprende la diferencia entre horas decimales y sexagesimales, y evita el error de conversión más común en nómina."}, "pt": {"nav-home": "Início", "nav-tools": "Ferramentas Grátis", "nav-tool1": "Conversor de Horas Decimais", "nav-tool2": "Horas Extras", "nav-tool3": "Folha de Ponto", "nav-guides": "Guias", "nav-blog": "Blog", "nav-about": "Sobre", "h1": "Horas Decimais vs. Sexagesimais: o guia", "intro": "Uma hora não se divide em 100 minutos, mas em 60 — o que complica qualquer cálculo de folha de pagamento feito manualmente.", "h2-1": "Por que a folha de pagamento usa o formato decimal", "p1": "Um contracheque precisa multiplicar um número de horas por uma taxa horária. Fazer esse cálculo com minutos (base 60) gera erros de arredondamento frequentes: por isso a folha de pagamento usa sistematicamente o formato decimal (base 100), mais simples de multiplicar.", "h2-2": "A conversão básica", "p2": "Para converter minutos em centésimos de hora: divida o número de minutos por 60. Exemplo: 30 minutos = 30/60 = 0,50 hora decimal.", "h2-3": "O erro mais comum", "p3": "Muitos confundem \"1h45\" com \"1,45 hora decimal\" — isso está errado: 45 minutos equivalem a 0,75 hora, então 1h45 = 1,75 hora decimal, não 1,45.", "cta": "Usar o conversor", "_title": "Guia: Horas Decimais vs. Sexagesimais | HoraDecimal.pro", "_desc": "Entenda a diferença entre horas decimais e sexagesimais, e evite o erro de conversão mais comum na folha de pagamento."}, "hi": {"nav-home": "होम", "nav-tools": "मुफ़्त टूल्स", "nav-tool1": "दशमलव घंटा परिवर्तक", "nav-tool2": "ओवरटाइम कैलकुलेटर", "nav-tool3": "टाइमशीट", "nav-guides": "गाइड", "nav-blog": "ब्लॉग", "nav-about": "हमारे बारे में", "h1": "दशमलव बनाम षष्टिमान घंटे: गाइड", "intro": "एक घंटा 100 मिनट में नहीं, बल्कि 60 मिनट में विभाजित होता है — जिससे हाथ से की गई कोई भी वेतन गणना जटिल हो जाती है।", "h2-1": "वेतन में दशमलव प्रारूप का उपयोग क्यों होता है", "p1": "वेतन पर्ची में घंटों की संख्या को प्रति घंटा दर से गुणा करना होता है। मिनटों (आधार 60) से यह गणना करने पर अक्सर पूर्णांकन त्रुटियां होती हैं — इसलिए वेतन प्रणाली हमेशा दशमलव प्रारूप (आधार 100) का उपयोग करती है, जिसे गुणा करना आसान है।", "h2-2": "मूल रूपांतरण", "p2": "मिनटों को घंटे के सौवें भाग में बदलने के लिए: मिनटों की संख्या को 60 से भाग दें। उदाहरण: 30 मिनट = 30/60 = 0.50 दशमलव घंटा।", "h2-3": "सबसे आम गलती", "p3": "बहुत से लोग \"1h45\" को \"1.45 दशमलव घंटा\" समझ लेते हैं — यह गलत है: 45 मिनट 0.75 घंटे के बराबर होते हैं, इसलिए 1h45 = 1.75 दशमलव घंटा, न कि 1.45।", "cta": "परिवर्तक का उपयोग करें", "_title": "गाइड: दशमलव बनाम षष्टिमान घंटे | HoraDecimal.pro", "_desc": "दशमलव और षष्टिमान घंटों के बीच अंतर समझें, और वेतन में सबसे आम रूपांतरण त्रुटि से बचें।"}, "ar": {"nav-home": "الرئيسية", "nav-tools": "أدوات مجانية", "nav-tool1": "محول الساعات العشرية", "nav-tool2": "حاسبة الساعات الإضافية", "nav-tool3": "كشف الدوام", "nav-guides": "أدلة", "nav-blog": "المدونة", "nav-about": "من نحن", "h1": "الساعات العشرية مقابل الستينية: الدليل", "intro": "الساعة لا تنقسم إلى 100 دقيقة بل إلى 60 — ما يُعقّد أي حساب رواتب يُجرى يدويًا.", "h2-1": "لماذا تعتمد الرواتب على الصيغة العشرية", "p1": "يجب أن يضرب كشف الراتب عدد الساعات في الأجر بالساعة. القيام بهذا الحساب بالدقائق (أساس 60) يؤدي إلى أخطاء تقريب متكررة — لذلك تعتمد أنظمة الرواتب دائمًا الصيغة العشرية (أساس 100)، الأسهل في الضرب.", "h2-2": "التحويل الأساسي", "p2": "لتحويل الدقائق إلى أجزاء عشرية من الساعة: اقسم عدد الدقائق على 60. مثال: 30 دقيقة = 30/60 = 0.50 ساعة عشرية.", "h2-3": "الخطأ الأكثر شيوعًا", "p3": "يخلط كثيرون بين \"1h45\" و\"1.45 ساعة عشرية\" — وهذا خطأ: 45 دقيقة تساوي 0.75 ساعة، لذا فإن 1h45 = 1.75 ساعة عشرية، وليس 1.45.", "cta": "استخدم المحول", "_title": "دليل: الساعات العشرية مقابل الستينية | HoraDecimal.pro", "_desc": "افهم الفرق بين الساعات العشرية والستينية، وتجنّب أكثر خطأ تحويل شيوعًا في الرواتب."}};</script>
+<script src="/i18n.js"></script>
 </body>
 </html>
